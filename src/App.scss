@@ -1,0 +1,206 @@
+@import "custom";
+html {
+  scroll-behavior: smooth;
+  width: 100vw;
+}
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  width: calc(100%);
+  a,
+  button,
+  .btn-link {
+    text-decoration: none;
+  }
+  .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+img {
+  max-width: 100%;
+}
+
+.primary {
+  color: $primary;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.section {
+  min-height: 100vh;
+  min-width: 100%;
+  transition: 0.3s ease;
+  &.content-section {
+    position: relative;
+    min-height: 90vh;
+    .main-title {
+      z-index: 1;
+    }
+    @include media-breakpoint-up(md) {
+      min-height: 100vh;
+    }
+  }
+  &.projects-section {
+    .project-card {
+      // position: relative;
+      .project-content {
+        overflow: hidden;
+        @include media-breakpoint-up(md) {
+          position: relative;
+        }
+        .backdrop {
+          position: absolute;
+          width: 100vw;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          z-index: 10;
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+        .project-text {
+          position: absolute;
+
+          transition: 0.2s ease-in-out;
+          width: 90%;
+          z-index: 1;
+          background-color: rgb(10, 10, 10);
+          @include media-breakpoint-up(md) {
+            bottom: -100%;
+
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+          }
+          &.visible {
+            z-index: 11;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include media-breakpoint-up(md) {
+              bottom: 0;
+              left: 0;
+              top: 0;
+              transform: translate(0, 0);
+              backdrop-filter: grayscale(30%);
+              background-color: rgba(0, 0, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.header-section {
+  position: relative;
+  .list-group {
+    list-style-type: none;
+    list-style: none;
+    li {
+      display: block;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      cursor: pointer;
+      &.active {
+        transition: 0.5s ease;
+        animation: nav-animation 1s 1 0.1s ease forwards;
+        &::after {
+          width: 0;
+        }
+      }
+      &::after {
+        transition: 0.5s ease;
+        content: "";
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        background-color: lighten($body-bg, 2);
+      }
+      &:hover {
+        &::after {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+.contact-container {
+  position: absolute;
+  bottom: 0;
+  .contact-section {
+    .col-contact {
+      display: flex;
+      transition: 0.5s ease;
+      flex-direction: column;
+      align-items: center;
+      @include media-breakpoint-up(md) {
+        align-items: center;
+        flex-direction: row;
+      }
+      span {
+        opacity: 0;
+        transition: 0.5s ease;
+        color: #fff;
+        text-decoration: none;
+      }
+      &:hover,
+      &:hover span {
+        opacity: 1;
+      }
+    }
+  }
+}
+.mobile-contact {
+  z-index: 9;
+  background-color: rgba(0, 0, 0);
+  position: fixed;
+  .contact-section {
+    .col-contact {
+      span {
+        opacity: 1;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.main-container {
+  height: 100vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@keyframes nav-animation {
+  0% {
+    background-color: $primary;
+    background-color: #000;
+    color: #fff;
+  }
+  50% {
+    background-color: $primary;
+    color: #000;
+  }
+  100% {
+    background-color: #000;
+    color: $primary;
+  }
+}
