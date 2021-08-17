@@ -31,7 +31,7 @@ export const HomeContent: React.FC<IHomeProps> = ({
             Keshav Sharma
           </div>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="animate__jackInTheBox" animateOnce>
+        <ScrollAnimation animateIn="animate__zoomIn" animateOnce>
           <p className="px-3 px-md-0 mb-2 text-center text-md-start h5 fw-lighter">
             I am a full-stack React developer. I've been coding for 3 years now
             and during this time I have worked on a lot of projects, which
@@ -50,7 +50,7 @@ export const HomeContent: React.FC<IHomeProps> = ({
         ref={imgRef}
         className="img-container m-auto text-center align-self-center col-md-4 offset-md-0 col-xxl-3"
       >
-        <ScrollAnimation animateIn="animate__rollIn" animateOnce>
+        <ScrollAnimation animateIn="animate__fadeInRightBig" animateOnce>
           <img src={BG} alt="" className="rouned w-75" />
         </ScrollAnimation>
       </div>
