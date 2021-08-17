@@ -3,7 +3,7 @@ import { ContactCard } from "./contact/contact";
 import { Content } from "./content";
 import { Header } from "./header";
 
-export const ReactLandingPage = () => {
+export const Portfolio = () => {
   // STATE
   const [active, setActive] = React.useState<0 | 1 | 2>(0);
 

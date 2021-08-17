@@ -1,5 +1,5 @@
 import "./App.scss";
-import { ReactLandingPage } from "./components/main";
+import { Portfolio } from "./components/main";
 
 function App() {
   window.onload = function LoadingComplete() {
@@ -7,8 +7,8 @@ function App() {
   };
 
   return (
-    <div className="App fadeIn">
-      <ReactLandingPage />
+    <div className="App">
+      <Portfolio />
     </div>
   );
 }
