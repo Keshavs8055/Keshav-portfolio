@@ -13,7 +13,7 @@ export const ReactLandingPage = () => {
   const contentRef = React.createRef<HTMLDivElement>();
   const titleRef = React.createRef<HTMLDivElement>();
   const imgRef = React.createRef<HTMLDivElement>();
-
+  const contactRef = React.createRef<HTMLDivElement>();
   // ACTIVE STATE HANDLE
   const handleActiveState = () => {
     if (!contentRef.current || !skillRef.current || !homeRef.current) return;
@@ -25,8 +25,9 @@ export const ReactLandingPage = () => {
         !homeRef.current
       )
         return;
-      if (contentRef.current.scrollTop < homeRef.current.offsetHeight) {
+      if (contentRef.current.scrollTop < homeRef.current.offsetHeight / 3) {
         setActive(0);
+        document.title = "Keshav Sharma | Home";
         return;
       }
 
@@ -35,6 +36,7 @@ export const ReactLandingPage = () => {
         contentRef.current.scrollTop < projectRef.current.clientHeight + 50
       ) {
         setActive(1);
+        document.title = "Keshav Sharma | Projects";
         return;
       }
       if (
@@ -42,6 +44,7 @@ export const ReactLandingPage = () => {
         projectRef.current.clientHeight / 2 + homeRef.current.clientHeight - 50
       ) {
         setActive(2);
+        document.title = "Keshav Sharma | Skills";
         return;
       }
     });
@@ -51,22 +54,16 @@ export const ReactLandingPage = () => {
     const mainElem = contentRef.current;
     const imgElem = imgRef.current;
     const titleElem = titleRef.current;
-    if (!mainElem || !imgElem || !titleElem) return;
+    const skillElem = skillRef.current;
+    const contactElem = contactRef.current;
+    if (!mainElem || !imgElem || !titleElem || !skillElem || !contactElem)
+      return;
+
+    // STYLE FIX
+    skillElem.style.paddingBottom =
+      contactElem.offsetHeight > 80 ? "0" : `${contactElem.offsetHeight + 2}px`;
+
     // ON SCROLL ANIMATION
-    mainElem.addEventListener("wheel", (e) => {
-      if (!homeRef || !homeRef.current) return;
-
-      let position = homeRef.current.getBoundingClientRect();
-      if (position.height > window.innerHeight || active > 0) return;
-      if (e.deltaY > 0) {
-        e.preventDefault();
-        let toRef;
-        if (active === 0) toRef = projectRef;
-        if (!toRef || !toRef.current) return;
-        handleSmoothScroll(toRef);
-      }
-    });
-
     mainElem.addEventListener("scroll", (e) => {
       titleElem.style.transform = `translateY(-${mainElem.scrollTop * 0.2}px)`;
       imgElem.style.transform = `translateY(-${mainElem.scrollTop * 0.8}px)`;
@@ -121,7 +118,7 @@ export const ReactLandingPage = () => {
   };
 
   return (
-    <div className="conatiner-fluid p-0">
+    <div className=" p-0">
       <div className="row m-0 p-0">
         <Header
           Refs={{
@@ -146,7 +143,7 @@ export const ReactLandingPage = () => {
           scrollHandler={handleSmoothScroll}
         />
       </div>
-      <ContactCard fromHome />
+      <ContactCard fromHome passRef={contactRef} />
     </div>
   );
 };

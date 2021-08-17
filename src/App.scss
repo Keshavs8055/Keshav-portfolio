@@ -10,15 +10,7 @@ body {
   max-height: 100vh;
   overflow: hidden;
   width: calc(100%);
-  a,
-  button,
-  .btn-link {
-    text-decoration: none;
-  }
-  .btn:focus {
-    outline: none;
-    box-shadow: none;
-  }
+  text-transform: capitalize;
 }
 *::-webkit-scrollbar {
   display: none;
@@ -26,11 +18,22 @@ body {
 * {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  max-width: 100vw;
 }
 img {
   max-width: 100%;
 }
-
+a,
+button {
+  text-decoration: none;
+}
+section,
+.skill-card,
+.project-card,
+.col-contact,
+.main-title {
+  transform: translate3d(0, 0, 0);
+}
 .primary {
   color: $primary;
   cursor: pointer;
@@ -43,10 +46,12 @@ img {
 .section {
   min-height: 100vh;
   min-width: 100%;
-  transition: 0.3s ease;
+  transition: 0.5s ease;
+  overflow: hidden;
+
   &.content-section {
     position: relative;
-    min-height: 90vh;
+    min-height: 95vh;
     .main-title {
       z-index: 1;
     }
@@ -56,41 +61,38 @@ img {
   }
   &.projects-section {
     .project-card {
-      // position: relative;
+      @include media-breakpoint-up(md) {
+        border: none !important;
+      }
       .project-content {
         overflow: hidden;
         @include media-breakpoint-up(md) {
           position: relative;
         }
-        .backdrop {
-          position: absolute;
-          width: 100vw;
-          height: 100vh;
-          top: 0;
-          left: 0;
-          z-index: 10;
-          background-color: rgba(0, 0, 0, 0.2);
-        }
         .project-text {
-          position: absolute;
-
-          transition: 0.2s ease-in-out;
-          width: 90%;
-          z-index: 1;
-          background-color: rgb(10, 10, 10);
+          transition: 0.5s ease;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
           @include media-breakpoint-up(md) {
+            position: absolute;
+            opacity: 0;
             bottom: -100%;
-
+            top: 100%;
+            left: -100%;
             overflow: hidden;
             width: 100%;
             height: 100%;
           }
           &.visible {
-            z-index: 11;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             @include media-breakpoint-up(md) {
+              position: absolute;
+              z-index: 11;
+              top: 0;
+              left: 0;
+              transition: 0.5s ease;
+              opacity: 1;
+              pointer-events: all;
               bottom: 0;
               left: 0;
               top: 0;
@@ -106,6 +108,10 @@ img {
 }
 .header-section {
   position: relative;
+  border-bottom: none;
+  &.header-bg {
+    background-color: rgb(12, 12, 12);
+  }
   .list-group {
     list-style-type: none;
     list-style: none;
@@ -185,8 +191,45 @@ img {
 .main-container {
   height: 100vh;
   overflow-y: scroll;
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+.skills-section {
+  position: relative;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+  .skill-container {
+    .skill-card {
+      border: 1px solid $primary;
+      position: relative;
+      cursor: pointer;
+      * {
+        z-index: 1;
+        color: inherit;
+      }
+      .skill-icon {
+        * {
+          transition: 0.2s ease-in-out;
+          transform: rotate3d(0deg);
+          transform-origin: center;
+        }
+      }
+
+      &:hover {
+        * {
+          color: #4caf50 !important;
+        }
+        .skill-icon {
+          * {
+            color: #4caf50;
+            transform: rotateY(360deg);
+          }
+        }
+      }
+    }
   }
 }
 @keyframes nav-animation {
@@ -200,7 +243,18 @@ img {
     color: #000;
   }
   100% {
-    background-color: #000;
+    background-color: transparent;
     color: $primary;
+  }
+}
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

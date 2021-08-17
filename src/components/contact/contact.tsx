@@ -1,13 +1,16 @@
 import { SiFiverr, SiGmail, SiLinkedin } from "react-icons/si";
+import { Constants } from "../../const";
 
 interface IContact {
   fromHome?: boolean;
+  passRef?: React.RefObject<HTMLDivElement>;
 }
 
-export const ContactCard: React.FC<IContact> = ({ fromHome }) => {
+export const ContactCard: React.FC<IContact> = ({ fromHome, passRef }) => {
   const home = fromHome ? fromHome : false;
   return (
     <div
+      ref={passRef}
       className={`w-100 p-2 text-left contact-container ${
         home
           ? "mobile-contact fixed-bottom d-md-none d-lg-none d-xl-none"
@@ -20,31 +23,31 @@ export const ContactCard: React.FC<IContact> = ({ fromHome }) => {
           !home ? "flex-column" : "align-items-center"
         }`}
       >
-        <div className="col p-0 me-auto">
+        <div className="col p-0">
           <a
             href="https://www.linkedin.com/in/keshav-sharma-1482b7189/"
-            className="col-contact my-md-1 py-md-2"
+            className="col-contact my-md-1 py-md-1"
           >
-            <SiLinkedin color="#ddd" size={30} />
-            <span className="mx-2">Linked-in</span>
+            <SiLinkedin color={Constants.lightColor} size={home ? 35 : 20} />
+            <span className="mx-2 d-none d-md-block">Linked-in</span>
           </a>
         </div>
-        <div className="col p-0 my-1">
+        <div className="col p-0">
           <a
             href="mailto:keshavs8055@gmail.com"
-            className="col-contact my-md-1 py-md-2"
+            className="col-contact my-md-1 py-md-1"
           >
-            <SiGmail color="#ddd" size={30} />
-            <span className="mx-2">Mail</span>
+            <SiGmail color={Constants.lightColor} size={home ? 35 : 20} />
+            <span className="mx-2 d-none d-md-block">Mail</span>
           </a>
         </div>
-        <div className="col p-0 my-1">
+        <div className="col p-0 ">
           <a
             href="https://www.fiverr.com/keshavs8055"
-            className="col-contact my-md-1 py-md-2"
+            className="col-contact my-md-1 py-md-1"
           >
-            <SiFiverr color="#ddd" size={30} />
-            <span className="mx-2">Fiverr</span>
+            <SiFiverr color={Constants.lightColor} size={home ? 35 : 20} />
+            <span className="mx-2 d-none d-md-block">Fiverr</span>
           </a>
         </div>
       </div>
