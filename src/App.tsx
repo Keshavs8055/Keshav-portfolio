@@ -1,14 +1,24 @@
+import React from "react";
 import "./App.scss";
 import { Portfolio } from "./components/main";
 
 function App() {
-  window.onload = function LoadingComplete() {
-    console.log("LOADED");
+  const [loading, toggleLoading] = React.useState<boolean>(true);
+  window.onload = function () {
+    toggleLoading(false);
   };
 
   return (
     <div className="App">
-      <Portfolio />
+      {loading ? (
+        <div className="p-5 text-center">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      ) : (
+        <Portfolio />
+      )}
     </div>
   );
 }

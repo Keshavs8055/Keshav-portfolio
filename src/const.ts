@@ -1,4 +1,4 @@
 export const Constants = {
-  themeColor: "#4caf50",
+  themeColor: "#4b20a1",
   lightColor: "#ddd",
 };

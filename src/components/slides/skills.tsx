@@ -18,14 +18,15 @@ interface ISkillsSection {
 export const SkillsSection: React.FC<ISkillsSection> = ({ skillRef }) => {
   return (
     <div
-      className="section skills-section container-full px-1 d-flex flex-wrap align-items-center justify-content-center"
+      className="text-dark section skills-section container-full px-1 d-flex flex-wrap align-items-center justify-content-center"
       ref={skillRef}
     >
       <ScrollAnimation
         animateIn="animate__tada"
         scrollableParentSelector=".main-container"
+        initiallyVisible
       >
-        <h1 className="fw-lighter w-100 d-md-none text-center p-2">Skills</h1>
+        <h1 className="fw-lighter w-100 text-center p-2">Skills</h1>
       </ScrollAnimation>
       <div className="skill-container w-100">
         <div className="w-100 row g-1 mx-0 my-1 skills-row py-1 justify-content-center align-items-stretch">
@@ -48,6 +49,7 @@ export const SkillsSection: React.FC<ISkillsSection> = ({ skillRef }) => {
           <SkillCard title="React Redux" Icon={<SiRedux size={35} />} />
         </div>
       </div>
+      <div className="d-none d-lg-block position-absolute w-100 background-main skills-bg"></div>
     </div>
   );
 };

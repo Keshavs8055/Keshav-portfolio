@@ -75,7 +75,7 @@ export const Portfolio = () => {
     ref: RefObject<HTMLDivElement>,
     speed = 1,
     acceleration = 1.1,
-    speedLimit = 100
+    speedLimit = 50
   ) => {
     const target = ref.current;
     const mainElem = contentRef.current;

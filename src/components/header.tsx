@@ -26,7 +26,7 @@ export const Header: React.FC<IHeaderProps> = ({
   });
 
   return (
-    <nav className="col col-12 col-md-3 col-xl-2 p-0 d-none d-sm-none d-md-block d-lg-block">
+    <nav className="text-dark col col-12 col-md-3 col-xl-2 p-0 d-none d-sm-none d-md-block d-lg-block">
       <ScrollAnimation animateIn="animate__fadeInLeft" animateOnce>
         <div className="container-fluid p-0 w-100 mw-100">
           <div
@@ -34,11 +34,11 @@ export const Header: React.FC<IHeaderProps> = ({
               active > 0 ? "header-bg" : null
             } section header-section`}
           >
-            <p className="p-2 m-0 text-light">Passionate Developer</p>
+            <p className="p-2 m-0 fw-bold">Passionate Developer</p>
             <ul className="list-group my-0">
               <li
                 className={`${
-                  active === 0 ? " active active-home" : null
+                  active === 0 ? "fw-bolder active active-home" : null
                 } py-3 px-2`}
                 onClick={() => {
                   scrollHandler(homeRef);
@@ -48,7 +48,7 @@ export const Header: React.FC<IHeaderProps> = ({
               </li>
               <li
                 className={`${
-                  active === 1 ? " active active-projects" : null
+                  active === 1 ? "fw-bolder  active active-projects" : null
                 } py-3 px-2`}
                 onClick={() => {
                   scrollHandler(projectRef);
@@ -58,7 +58,7 @@ export const Header: React.FC<IHeaderProps> = ({
               </li>
               <li
                 className={`${
-                  active === 2 ? " active active-skills" : null
+                  active === 2 ? "fw-bolder  active active-skills" : null
                 } py-3 px-2`}
                 onClick={() => {
                   scrollHandler(skillRef);

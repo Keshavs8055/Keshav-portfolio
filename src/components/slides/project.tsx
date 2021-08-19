@@ -13,16 +13,16 @@ export const ProjectContent: React.FC<IProject> = ({ projectRef }) => {
   return (
     <div
       ref={projectRef}
-      className="section p-1 projects-section container-full"
+      className="section p-3 projects-section container-full text-dark"
     >
       <ScrollAnimation
-        animateOnce
+        initiallyVisible
         animateIn="animate__tada"
         scrollableParentSelector=".main-container"
       >
-        <h1 className="fw-lighter d-md-none text-center pb-2">Projects</h1>
+        <h1 className="fw-lighter text-center pb-2 text-light">Projects</h1>
       </ScrollAnimation>
-      <div className="row project-row py-1 align-items-center justify-content-evenly">
+      <div className="row row-cols-2 project-row py-1 justify-content-evenly">
         <ProjectCard
           visitLink="https://notes-app-six-psi.vercel.app/"
           content="A simple note taking application which allows users to signIn with their google account. The app offers the functionality to add, delete notes which are then stored in firebase. The web app uses React, Redux and Material-Ui"

@@ -9,7 +9,7 @@ export const SkillCard: React.FC<ISkillCard> = ({ Icon, title }) => {
     <div className="col col-md-3 my-1 my-md-0">
       <div className="skill-card p-3 text-center d-md-flex align-items-end justify-content-around">
         <div className="skill-title">
-          <h5 className="fw-bold">{title}</h5>
+          <h6 className="fw-bold">{title}</h6>
         </div>
         <div className="skill-icon">{Icon}</div>
       </div>

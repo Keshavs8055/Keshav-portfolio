@@ -28,8 +28,10 @@ export const ContactCard: React.FC<IContact> = ({ fromHome, passRef }) => {
             href="https://www.linkedin.com/in/keshav-sharma-1482b7189/"
             className="col-contact my-md-1 py-md-1"
           >
-            <SiLinkedin color={Constants.lightColor} size={home ? 35 : 20} />
-            <span className="mx-2 d-none d-md-block">Linked-in</span>
+            <SiLinkedin color={Constants.themeColor} size={home ? 35 : 30} />
+            <span className="text-primary fw-bold mx-2 d-none d-md-block">
+              Linked-in
+            </span>
           </a>
         </div>
         <div className="col p-0">
@@ -37,8 +39,10 @@ export const ContactCard: React.FC<IContact> = ({ fromHome, passRef }) => {
             href="mailto:keshavs8055@gmail.com"
             className="col-contact my-md-1 py-md-1"
           >
-            <SiGmail color={Constants.lightColor} size={home ? 35 : 20} />
-            <span className="mx-2 d-none d-md-block">Mail</span>
+            <SiGmail color={Constants.themeColor} size={home ? 35 : 30} />
+            <span className="text-primary fw-bold mx-2 d-none d-md-block">
+              Mail
+            </span>
           </a>
         </div>
         <div className="col p-0 ">
@@ -46,8 +50,10 @@ export const ContactCard: React.FC<IContact> = ({ fromHome, passRef }) => {
             href="https://www.fiverr.com/keshavs8055"
             className="col-contact my-md-1 py-md-1"
           >
-            <SiFiverr color={Constants.lightColor} size={home ? 35 : 20} />
-            <span className="mx-2 d-none d-md-block">Fiverr</span>
+            <SiFiverr color={Constants.themeColor} size={home ? 35 : 30} />
+            <span className="text-primary fw-bold mx-2 d-none d-md-block">
+              Fiverr
+            </span>
           </a>
         </div>
       </div>
