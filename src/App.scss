@@ -103,7 +103,7 @@ button {
         height: 100%;
         top: 0;
         left: -100%;
-        background-color: darken($body-bg, 8);
+        background-color: lighten($primary, 50);
       }
       &:hover {
         &::after {
