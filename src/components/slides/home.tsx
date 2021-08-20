@@ -32,7 +32,7 @@ export const HomeContent: React.FC<IHomeProps> = ({
           </div>
         </ScrollAnimation>
         <ScrollAnimation animateIn="animate__zoomIn" animateOnce>
-          <p className="px-3 px-md-1 mb-2 text-center text-md-start h5 fw-bolder">
+          <p className="px-3 px-md-1 mb-2 text-center text-md-start h5 fw-bold">
             A full stack react developer who isn't just focused on writing code
             but also creating something worthwhile.
             <br />
@@ -40,7 +40,7 @@ export const HomeContent: React.FC<IHomeProps> = ({
           <p className="px-3 px-md-1 mb-2 text-center text-md-start h5 fw-light">
             Check out my projects and skills
             <span
-              className="primary fw-bold"
+              className="primary fw-bolder"
               onClick={() => scrollHandler(projectRef)}
             >
               {" "}

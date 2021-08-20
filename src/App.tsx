@@ -4,9 +4,9 @@ import { Portfolio } from "./components/main";
 
 function App() {
   const [loading, toggleLoading] = React.useState<boolean>(true);
-  window.onload = function () {
+  document.addEventListener("DOMContentLoaded", function () {
     toggleLoading(false);
-  };
+  });
 
   return (
     <div className="App">
