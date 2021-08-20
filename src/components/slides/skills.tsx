@@ -21,14 +21,14 @@ export const SkillsSection: React.FC<ISkillsSection> = ({ skillRef }) => {
       className="text-dark section skills-section container-full px-1 d-flex flex-wrap align-items-center justify-content-center"
       ref={skillRef}
     >
-      <ScrollAnimation
-        animateIn="animate__tada"
-        scrollableParentSelector=".main-container"
-        initiallyVisible
-      >
-        <h1 className="fw-lighter w-100 text-center p-2">Skills</h1>
-      </ScrollAnimation>
       <div className="skill-container w-100">
+        <ScrollAnimation
+          animateIn="animate__tada"
+          scrollableParentSelector=".main-container"
+          initiallyVisible
+        >
+          <h1 className="fw-lighter w-100 text-center p-2">Skills</h1>
+        </ScrollAnimation>
         <div className="w-100 row g-1 mx-0 my-1 skills-row py-1 justify-content-center align-items-stretch">
           <SkillCard title="HTML" Icon={<AiFillHtml5 size={35} />} />
         </div>

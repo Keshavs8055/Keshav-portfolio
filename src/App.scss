@@ -20,6 +20,7 @@ body {
   scrollbar-width: none;
   max-width: 100vw;
 }
+// --DONE
 img {
   max-width: 100%;
 }
@@ -141,7 +142,7 @@ button {
 }
 .mobile-contact {
   z-index: 9;
-  background-color: $body-bg;
+  background-color: darken($body-bg, 3);
   position: fixed;
   .contact-section {
     .col-contact {
@@ -181,7 +182,7 @@ button {
       .skill-icon {
         * {
           transition: 0.5s ease-in-out;
-          transform: rotate3d(0deg);
+          transform: rotate3d(0, 0, 0);
           transform-origin: center;
         }
       }
@@ -197,8 +198,7 @@ button {
     }
   }
 }
-
-.background-main {
+--DONE .background-main {
   position: absolute;
   width: 100%;
   height: 5%;
@@ -220,7 +220,7 @@ button {
     border-radius: 0 0 24px 0;
   }
 }
-
+// --DONE
 @keyframes slideUpCustom {
   from {
     bottom: -100%;

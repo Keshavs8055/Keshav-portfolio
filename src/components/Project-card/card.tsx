@@ -14,7 +14,7 @@ export const ProjectCard: React.FC<IProjectCard> = ({
 }) => {
   // const [visible, toggleVisible] = React.useState<boolean>(false);
   return (
-    <div className="col-10 offset-1 col-md-6 offset-md-0 py-2">
+    <div className="col-12 col-md-6 py-2">
       <div className="bg-light project-card p-2 w-100 rounded shadow">
         <h5 className="h5 py-2">{title}</h5>
         <div className="project-content mb-1">

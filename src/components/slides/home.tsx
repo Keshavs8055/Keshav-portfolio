@@ -32,14 +32,17 @@ export const HomeContent: React.FC<IHomeProps> = ({
           </div>
         </ScrollAnimation>
         <ScrollAnimation animateIn="animate__zoomIn" animateOnce>
-          <p className="px-3 px-md-1 mb-2 text-center text-md-start h5">
+          <p className="px-3 px-md-1 mb-2 text-center text-md-start h5 fw-bolder">
             A full stack react developer who isn't just focused on writing code
             but also creating something worthwhile.
             <br />
           </p>
           <p className="px-3 px-md-1 mb-2 text-center text-md-start h5 fw-light">
             Check out my projects and skills
-            <span className="primary" onClick={() => scrollHandler(projectRef)}>
+            <span
+              className="primary fw-bold"
+              onClick={() => scrollHandler(projectRef)}
+            >
               {" "}
               below.
             </span>
