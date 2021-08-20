@@ -53,9 +53,11 @@ export const HomeContent: React.FC<IHomeProps> = ({
         ref={imgRef}
         className="img-container m-auto text-center align-self-center col-md-4 offset-md-0 col-xxl-3"
       >
-        <ScrollAnimation animateIn="animate__zoomIn" animateOnce>
-          <img src={BG} alt="" className="w-75" />
-        </ScrollAnimation>
+        {BG ? (
+          <ScrollAnimation animateIn="animate__zoomIn" animateOnce>
+            <img src={BG} alt="" className="w-75" />
+          </ScrollAnimation>
+        ) : null}
       </div>
 
       <div className="position-absolute w-100 background-main home-bg"></div>
