@@ -5,6 +5,7 @@ import POP_IMG from "../../imgs/Project Thumb/POP-1.png";
 import GotNote from "../../imgs/Project Thumb/Got-Note.png";
 import STP from "../../imgs/Project Thumb/STP.png";
 import DICT from "../../imgs/Project Thumb/DICT.png";
+import PRPT from "../../imgs/Project Thumb/PRPT.png";
 import ScrollAnimation from "react-animate-on-scroll";
 
 interface IProject {
@@ -42,6 +43,15 @@ export const ProjectContent: React.FC<IProject> = ({ projectRef }) => {
         "
           img={POP_IMG}
           title="Pop Thoughts"
+        />
+        <ProjectCard
+          visitLink="https://promptpedia-3wd02lnox-keshavs8055.vercel.app/"
+          content="An innovative Next.js app that showcases my skills in web development and AI integration. This app brings together AI prompt sharing and seamless Google Login functionality to provide a unique and engaging user experience.
+
+With my app, users can immerse themselves in a collaborative space where they can create, share, and explore AI-generated prompts.
+        "
+          img={PRPT}
+          title="Promptpedia"
         />
         <ProjectCard
           visitLink="https://notes-app-six-psi.vercel.app/"
