@@ -9,7 +9,7 @@ import {
   DiSass,
 } from "react-icons/di";
 
-import { SiFirebase, SiRedux, SiNextdotjs } from "react-icons/si";
+import { SiFirebase, SiRedux, SiNextDotJs } from "react-icons/si";
 import ScrollAnimation from "react-animate-on-scroll";
 interface ISkillsSection {
   skillRef: React.RefObject<HTMLDivElement>;
@@ -40,7 +40,7 @@ export const SkillsSection: React.FC<ISkillsSection> = ({ skillRef }) => {
           <SkillCard title="JavaScript" Icon={<DiJavascript1 size={35} />} />
           <SkillCard title="REACT" Icon={<DiReact size={35} />} />
           <SkillCard title="Node-JS" Icon={<DiNodejs size={35} />} />
-          <SkillCard title="NextJS" Icon={<SiNextdotjs size={35} />} />
+          <SkillCard title="NextJS" Icon={<SiNextDotJs size={35} />} />
         </div>
         <div className="w-100 row g-1 mx-0 my-1 skills-row py-1 justify-content-center align-items-center">
           <SkillCard title="Mongo-DB" Icon={<DiMongodb size={35} />} />
