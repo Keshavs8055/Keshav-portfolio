@@ -6,6 +6,7 @@ import GotNote from "../../imgs/Project Thumb/Got-Note.png";
 import STP from "../../imgs/Project Thumb/STP.png";
 import DICT from "../../imgs/Project Thumb/DICT.png";
 import PRPT from "../../imgs/Project Thumb/PRPT.png";
+import YTC from "../../imgs/Project Thumb/PRPT.png";
 import ScrollAnimation from "react-animate-on-scroll";
 
 interface IProject {
@@ -15,13 +16,11 @@ export const ProjectContent: React.FC<IProject> = ({ projectRef }) => {
   return (
     <div
       ref={projectRef}
-      className="section p-3 projects-section container-full text-dark"
-    >
+      className="section p-3 projects-section container-full text-dark">
       <ScrollAnimation
         initiallyVisible
         animateIn="animate__tada"
-        scrollableParentSelector=".main-container"
-      >
+        scrollableParentSelector=".main-container">
         <h1 className="fw-lighter text-center pb-2 text-light">Projects</h1>
       </ScrollAnimation>
       <div className="row row-cols-2 project-row py-1 justify-content-evenly">
@@ -43,6 +42,13 @@ export const ProjectContent: React.FC<IProject> = ({ projectRef }) => {
         "
           img={POP_IMG}
           title="Pop Thoughts"
+        />
+
+        <ProjectCard
+          visitLink="https://youtube-clone-wheat-five.vercel.app/"
+          content="This is a react based youtube clone, Simple and easy-to-use application. It allows browsing through new videos or a particular category of videos. Uses React, Material-Ui and react-player. The content is provided by RapidAPI."
+          img={YTC}
+          title="Youtube Clone"
         />
         <ProjectCard
           visitLink="https://promptpedia-3wd02lnox-keshavs8055.vercel.app/"
