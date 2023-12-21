@@ -6,7 +6,7 @@ import GotNote from "../../imgs/Project Thumb/Got-Note.png";
 import STP from "../../imgs/Project Thumb/STP.png";
 import DICT from "../../imgs/Project Thumb/DICT.png";
 import PRPT from "../../imgs/Project Thumb/PRPT.png";
-import YTC from "../../imgs/Project Thumb/PRPT.png";
+import YTC from "../../imgs/Project Thumb/YTC.png";
 import ScrollAnimation from "react-animate-on-scroll";
 
 interface IProject {
