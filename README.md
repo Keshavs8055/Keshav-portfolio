@@ -1,7 +1,3 @@
-Here’s a comprehensive update for your README.md, including all relevant sections except for images or screenshots. You can copy and personalize as needed:
-
----
-
 # Keshav Portfolio
 
 A personal portfolio website built using React, TypeScript, SCSS, and HTML. This project showcases my work, skills, and experience as a web developer.
