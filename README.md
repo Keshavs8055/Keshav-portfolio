@@ -1,107 +1,73 @@
-# Keshav Portfolio
+# React + TypeScript + Vite
 
-A personal portfolio website built using React, TypeScript, SCSS, and HTML. This project showcases my work, skills, and experience as a web developer.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Table of Contents
+Currently, two official plugins are available:
 
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Getting Started](#getting-started)
-- [Folder Structure](#folder-structure)
-- [Available Scripts](#available-scripts)
-- [Contributing](#contributing)
-- [Contact](#contact)
-- [License](#license)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Features
+## React Compiler
 
-- Modern and responsive design
-- Interactive UI built with React and TypeScript
-- Styled using SCSS for modular and maintainable CSS
-- Sections for projects, skills, experience, social links, and more
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Technology Stack
+## Expanding the ESLint configuration
 
-- **TypeScript** (78%)
-- **SCSS** (15.9%)
-- **HTML** (6.1%)
-- [React](https://reactjs.org/)
-- [Create React App](https://github.com/facebook/create-react-app)
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Getting Started
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-To set up the project locally:
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Keshavs8055/Keshav-portfolio.git
-   cd Keshav-portfolio
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   yarn install
-   # or
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   yarn start
-   # or
-   npm start
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Folder Structure
-
-A general overview of the main project structure:
-
-```
-Keshav-portfolio/
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   ├── App.tsx
-│   └── index.tsx
-├── package.json
-├── tsconfig.json
-└── README.md
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## Available Scripts
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-In the project directory, you can run:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-- `yarn start` or `npm start`: Runs the app in development mode.
-- `yarn test` or `npm test`: Launches the test runner.
-- `yarn build` or `npm run build`: Builds the app for production.
-- `yarn eject`: Ejects the Create React App configuration (irreversible).
-
-Refer to the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) for more details.
-
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests for new features, bug fixes, or improvements.
-
-1. Fork the repository.
-2. Create your feature branch: `git checkout -b feature/YourFeature`
-3. Commit your changes: `git commit -m 'Add YourFeature'`
-4. Push to the branch: `git push origin feature/YourFeature`
-5. Open a pull request.
-
-## Contact
-
-For questions, feedback, or collaborations, please reach out via [GitHub Issues](https://github.com/Keshavs8055/Keshav-portfolio/issues).
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Let me know if you’d like to add or change any details!
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
