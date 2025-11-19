@@ -11,10 +11,10 @@ export default function Landing() {
           initial={{ opacity: 0, x: -18 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-6 py-30 lg:py-0"
         >
           {/* Small mark + name */}
-          <div className="flex items-center gap-4 ">
+          <div className="flex items-center gap-4">
             {/* <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-amber-100 text-[#08233a] font-semibold drop-shadow-sm font-serif">
               <SmileIcon />
             </div> */}
@@ -40,7 +40,10 @@ export default function Landing() {
 
           {/* Primary CTA + secondary */}
           <div className="flex items-center gap-4 mt-4">
-            <a href={LandingConfig.mailString}>
+            <a
+              href={LandingConfig.mailString}
+              className="cursor-pointer"
+            >
               <button className="bg-linear-to-r from-indigo-500 to-rose-500 px-6 py-2 rounded-lg font-bold shadow-lg hover:scale-[1.02] transition-transform">
                 Contact Now
               </button>

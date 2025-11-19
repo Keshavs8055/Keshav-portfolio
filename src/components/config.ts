@@ -16,6 +16,7 @@ import ProjectImage3 from "../assets/projects/projectImage3.png";
 import ProjectImage4 from "../assets/projects/projectImage4.png";
 import ProjectImage5 from "../assets/projects/projectImage5.png";
 import ProjectImage6 from "../assets/projects/projectImage6.png";
+import ProjectImage7 from "../assets/projects/projectImage7.png";
 
 export const LandingConfig = {
   mailString: `
@@ -147,6 +148,16 @@ export const ProjectsConfig = {
       image: ProjectImage5,
       tags: ["Next.js", "MongoDB", "AI", "Typescript"],
       repo: "https://github.com/Keshavs8055/Zenith-Intelligent-Ascent",
+      role: "Full Stack Developer",
+    },
+    {
+      id: "blog",
+      title: "Thorought - A blog Application",
+      description:
+        "A fullstack blog application built with MERN stack. Users can create, edit, delete and view blog posts. Features user authentication and authorization.",
+      image: ProjectImage7,
+      tags: ["MongoDB", "Express", "React", "Node.js"],
+      repo: "https://github.com/Keshavs8055/Thorough-blog",
       role: "Full Stack Developer",
     },
     {
