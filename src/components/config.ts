@@ -10,7 +10,7 @@ import {
   Zap,
 } from "lucide-react";
 
-import Hero from "../assets/landing/project-hero.png";
+import ProjectImage1 from "../assets/projects/projectImage1.png";
 import ProjectImage2 from "../assets/projects/projectImage2.png";
 import ProjectImage3 from "../assets/projects/projectImage3.png";
 import ProjectImage4 from "../assets/projects/projectImage4.png";
@@ -18,19 +18,12 @@ import ProjectImage5 from "../assets/projects/projectImage5.png";
 import ProjectImage6 from "../assets/projects/projectImage6.png";
 import ProjectImage7 from "../assets/projects/projectImage7.png";
 
-export const LandingConfig = {
+export const Config = {
+  schedulingLink: "https://koalendar.com/e/meet-with-keshav-sharma",
+
   mailString: `
-   mailto:keshavs.0496@gmail.com?subject=Contact%20from%20Portfolio&body=Hi%20Keshav%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work.%20I%E2%80%99d%20like%20to%20discuss%20a%20potential%20project%20and%20see%20if%20we%20could%20work%20together.%0D%0A%0D%0ACould%20you%20share%20your%20availability%20for%20a%20short%20call%3F%0D%0A%0D%0ARegards%2C%0D%0A
+   mailto:keshavs.0496@gmail.com?subject=Project%20Enquiry&body=Hi%20Keshav,%0AI'm%20interested%20in%20your%20services.%20Here%20are%20the%20details:%0A-%20Business%20Name:%0A-%20Current%20Website%20(If%20any):%0A-%20What%20I%20Need:%0A-%20Timeline:%0A-%20Budget%20Range:%0A%0ALooking%20forward%20to%20hearing%20from%20you.
     `,
-  featured: {
-    imageName: Hero,
-    altText: "Momentum Flow screenshot",
-    link: "https://momentum-flow.vercel.app/",
-    title: "Momentum Flow",
-    description:
-      "An AI powered productivity app that helps you stay focused and organized throughout your day.",
-    props: ["Accessible", "SSR-ready", "Perf-first"],
-  },
 };
 
 export const SkillsConfig = {
@@ -119,6 +112,16 @@ export const SkillsConfig = {
 export const ProjectsConfig = {
   projects: [
     {
+      id: "momentum-flow",
+      title: "Momentum Flow",
+      description:
+        "An AI powered productivity app that helps you stay focused and organized throughout your day.",
+      image: ProjectImage1,
+      tags: ["Next.js", "AI", "Tailwind", "Firebase"],
+      live: "https://momentum-flow.vercel.app/",
+      repo: "https://github.com/Keshavs8055/Momentum-Flow",
+    },
+    {
       id: "journely",
       title: "Journely",
       description:
@@ -152,7 +155,7 @@ export const ProjectsConfig = {
     },
     {
       id: "blog",
-      title: "Thorought - A blog Application",
+      title: "Thorough - A blog Application",
       description:
         "A fullstack blog application built with MERN stack. Users can create, edit, delete and view blog posts. Features user authentication and authorization.",
       image: ProjectImage7,

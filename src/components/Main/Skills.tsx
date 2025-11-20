@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { SkillsConfig } from "./config";
+import { SkillsConfig } from "../config";
 
 export default function Skills() {
   return (
     <section
       id="skills"
       aria-label="Skills"
-      className="py-20 bg-linear-to-b from-[#071024] to-[#041018] text-white px-6"
+      className="py-20  text-white px-6"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}

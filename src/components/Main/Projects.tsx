@@ -7,7 +7,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-import { ProjectsConfig } from "./config";
+import { ProjectsConfig } from "../config";
 
 // Example data. Replace image entries with imported assets or absolute URLs.
 // If using CRA/Vite import images at top of file and reference the imported variables.
@@ -16,7 +16,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 px-6 bg-linear-to-t from-[#041018] to-[#071024] text-white"
+      className="py-20 px-6  text-white"
     >
       <div className="max-w-6xl mx-auto">
         <motion.header
@@ -27,7 +27,7 @@ export default function Projects() {
           className="mb-10"
         >
           <h2 className="text-3xl lg:text-4xl font-extrabold">
-            Selected projects
+            Personal projects
           </h2>
           <p className="mt-3 text-slate-300 max-w-2xl">
             A curated set of work — focused on impact, performance, and clarity.
