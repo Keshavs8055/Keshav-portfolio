@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prerender": "node scripts/prerender.js",
+    "build:prerender": "npm run build && npm run prerender"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
@@ -28,8 +30,13 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^24.31.0",
+    "rollup-plugin-visualizer": "^6.0.5",
+    "serve": "^14.2.5",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.3",
-    "vite": "^7.2.2"
+    "vite": "^7.2.2",
+    "vite-plugin-compression": "^0.5.1"
   }
 }

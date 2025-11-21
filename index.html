@@ -47,28 +47,7 @@
       content="Keshav Sharma"
     />
 
-    <!-- Twitter
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
-    <meta
-      name="twitter:title"
-      content="Keshav Sharma — Modernize local-business websites"
-    />
-    <meta
-      name="twitter:description"
-      content="Mobile-first, fast websites for cafés, salons, boutiques and coaches. Book a free 3-point audit."
-    />
-    <meta
-      name="twitter:image"
-      content="https://yourdomain.com/og-image.png"
-    />
-    <meta
-      name="twitter:creator"
-      content="@yourTwitterHandle"
-    />
-
+    <!-- 
      Preconnect optimizations (fonts / analytics you use) -->
     <link
       rel="preconnect"
@@ -80,24 +59,21 @@
       href="https://fonts.googleapis.com"
     />
 
-    <!-- Structured data (WebSite + Person / ProfessionalService)
-    <script type="application/ld+json">
+    <!-- <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
             "@type": "WebSite",
-            "@id": "https://yourdomain.com/#website",
+            "@id": "https://yourdomain.com/",
             "url": "https://yourdomain.com/",
             "name": "Keshav Sharma - Portfolio",
             "description": "I modernize local-business websites — mobile-first, fast and conversion-ready.",
-            "publisher": {
-              "@id": "https://yourdomain.com/#person"
-            }
+            "publisher": { "@id": "https://yourdomain.com/" }
           },
           {
             "@type": "Person",
-            "@id": "https://yourdomain.com/#person",
+            "@id": "https://yourdomain.com/",
             "name": "Keshav Sharma",
             "url": "https://yourdomain.com/",
             "sameAs": [
@@ -109,11 +85,14 @@
             "@type": "ProfessionalService",
             "@id": "https://yourdomain.com/#service",
             "name": "Website Modernization & Redesign",
-            "provider": {
-              "@id": "https://yourdomain.com/#person"
-            },
+            "provider": { "@id": "https://yourdomain.com/" },
             "serviceType": "Web design and development",
-            "areaServed": "IN"
+            "areaServed": "IN",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "mailto:keshavs.0496@gmail.com"
+            }
           }
         ]
       }

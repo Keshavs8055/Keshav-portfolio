@@ -2,11 +2,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { Config } from "../config";
 
 /**
  * Replace CONTACT_EMAIL with your actual mailto (or import from Config)
  */
-const CONTACT_EMAIL = "mailto:hello@yourdomain.com";
+const CONTACT_EMAIL = Config.mailString;
 
 const FAQS: { q: string; a: React.ReactNode }[] = [
   {

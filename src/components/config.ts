@@ -19,6 +19,7 @@ import ProjectImage6 from "../assets/projects/projectImage6.png";
 import ProjectImage7 from "../assets/projects/projectImage7.png";
 
 export const Config = {
+  mainURL: "",
   schedulingLink: "https://koalendar.com/e/meet-with-keshav-sharma",
 
   mailString: `
