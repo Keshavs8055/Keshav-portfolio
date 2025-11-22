@@ -1,25 +1,3 @@
-// import React, { Suspense } from "react";
-// import { createBrowserRouter, RouterProvider } from "react-router";
-
-// import Home from "./components/Main/Home/Home";
-
-// const CaseStudy = React.lazy(() => import("./components/Main/CaseStudy"));
-
-// const router = createBrowserRouter([
-//   { path: "/", element: <Home /> },
-//   { path: "/case-study", element: <CaseStudy /> },
-// ]);
-
-// function App() {
-//   return (
-//     <Suspense fallback={<div aria-hidden>Loading...</div>}>
-//       <RouterProvider router={router} />
-//     </Suspense>
-//   );
-// }
-
-// export default App;
-// src/App.tsx
 import React, { Suspense } from "react";
 import {
   createBrowserRouter,
@@ -32,7 +10,6 @@ import Home from "./components/Main/Home/Home";
 
 const CaseStudy = React.lazy(() => import("./components/Main/CaseStudy"));
 
-/** Small Error Boundary to avoid blank screen when a lazy chunk fails */
 class ErrorBoundary extends React.Component<
   { children: React.ReactNode },
   { hasError: boolean }
@@ -109,30 +86,10 @@ function LoadingFallback() {
       aria-live="polite"
       className="min-h-screen flex items-center justify-center bg-[#061022]"
     >
-      <div className="text-center">
-        <svg
-          className="animate-spin mx-auto mb-4"
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden
-        >
-          <circle
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="rgba(255,255,255,0.08)"
-            strokeWidth="4"
-          />
-          <path
-            d="M22 12a10 10 0 00-10-10"
-            stroke="white"
-            strokeWidth="4"
-            strokeLinecap="round"
-          />
-        </svg>
-        <p className="text-slate-300">Loading…</p>
+      <div className="w-full gap-x-2 flex justify-center items-center">
+        <div className="w-15 bg-[#d991c2] h-15 rounded-full animate-bounce"></div>
+        <div className="w-15 h-15 bg-[#9869b8] rounded-full animate-bounce"></div>
+        <div className="w-15 h-15 bg-[#6756cc] rounded-full animate-bounce"></div>
       </div>
     </div>
   );

@@ -125,10 +125,29 @@ export default function Home() {
     };
   }, []);
 
-  // Simple suspense fallback used for below-the-fold sections (keeps layout stable)
   const SectionFallback = (
-    <div className="max-w-6xl mx-auto px-6 py-12 text-slate-500">
-      {/* lightweight placeholder to avoid layout jumps */}
+    <div className="flex items-center justify-center mx-auto px-6 py-12 text-slate-500">
+      <div className="flex space-x-3 sm:space-x-4">
+        <div
+          className="w-4 h-4 sm:w-6 sm:h-6 rounded-full 
+                     bg-linear-to-br from-violet-600 to-pink-500 
+                     animate-pulse"
+        ></div>
+
+        <div
+          className="w-4 h-4 sm:w-6 sm:h-6 rounded-full 
+                     bg-linear-to-br from-blue-500 to-cyan-400 
+                     animate-pulse"
+          style={{ animationDelay: "0.2s" }}
+        ></div>
+
+        <div
+          className="w-4 h-4 sm:w-6 sm:h-6 rounded-full 
+                     bg-linear-to-br from-teal-400 to-green-300 
+                     animate-pulse"
+          style={{ animationDelay: "0.4s" }}
+        ></div>
+      </div>
     </div>
   );
 
@@ -137,7 +156,6 @@ export default function Home() {
       <Landing />
       <ValuePillars />
 
-      {/* Below-the-fold content is lazy-loaded to improve initial render */}
       <Suspense fallback={SectionFallback}>
         <ServicesSection />
       </Suspense>

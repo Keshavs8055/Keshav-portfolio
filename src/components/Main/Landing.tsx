@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Config } from "../config";
 import { NavLink } from "react-router";
-import VECTOR from "../../assets/landing/vector.png";
+import VECTOR from "../../assets/landing/vector.webp";
 
 const TESTIMONIAL =
   "Keshav updated our booking flow and made the site faster — customers call more often now.";
@@ -11,7 +11,6 @@ export default function Landing() {
   return (
     <header className="min-h-screen flex items-center justify-center  text-white px-6">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-3 items-center py-16 justify-between">
-        {/* LEFT: Focused text column */}
         <motion.div
           transition={{ duration: 0.6 }}
           initial={{ opacity: 0, x: -20 }}
@@ -98,7 +97,6 @@ export default function Landing() {
           </div>
         </motion.div>
 
-        {/* RIGHT: Single focused visual */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
