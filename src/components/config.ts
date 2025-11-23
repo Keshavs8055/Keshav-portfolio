@@ -10,14 +10,6 @@ import {
   Zap,
 } from "lucide-react";
 
-import ProjectImage1 from "../assets/projects/projectImage1.png";
-import ProjectImage2 from "../assets/projects/projectImage2.png";
-import ProjectImage3 from "../assets/projects/projectImage3.png";
-import ProjectImage4 from "../assets/projects/projectImage4.png";
-import ProjectImage5 from "../assets/projects/projectImage5.png";
-import ProjectImage6 from "../assets/projects/projectImage6.png";
-import ProjectImage7 from "../assets/projects/projectImage7.png";
-
 export const Config = {
   mainURL: "",
   schedulingLink: "https://koalendar.com/e/meet-with-keshav-sharma",
@@ -108,81 +100,4 @@ export const SkillsConfig = {
         return "";
     }
   },
-};
-
-export const ProjectsConfig = {
-  projects: [
-    {
-      id: "momentum-flow",
-      title: "Momentum Flow",
-      description:
-        "An AI powered productivity app that helps you stay focused and organized throughout your day.",
-      image: ProjectImage1,
-      tags: ["Next.js", "AI", "Tailwind", "Firebase"],
-      live: "https://momentum-flow.vercel.app/",
-      repo: "https://github.com/Keshavs8055/Momentum-Flow",
-    },
-    {
-      id: "journely",
-      title: "Journely",
-      description:
-        "An AI powered journaling app that helps you reflect and grow. A journal that grows along with your journey.",
-      image: ProjectImage2,
-      tags: ["Next.js", "AI", "Tailwind", "Genkit", "Firebase"],
-      live: "https://journely-psi.vercel.app/",
-      repo: "https://github.com/Keshavs8055/Journely",
-      role: "Full Stack Developer",
-    },
-    {
-      id: "resume",
-      title: "Resume Analyzer",
-      description:
-        "Another AI powered web app that helps you analyze and improve your resume for better job prospects. Includes Chat features and powered by GenKit AI.",
-      image: ProjectImage4,
-      tags: ["Next.js", "Redis", "Tailwind", "Nodejs"],
-      live: "https://resume-analyzer-silk-rho.vercel.app/",
-      repo: "https://github.com/Keshavs8055/Resume-analyzer",
-      role: "Full Stack Developer",
-    },
-    {
-      id: "zenith",
-      title: "Zenith - Intelligent Ascent",
-      description:
-        "A rich todo app which makes your goals easy to meet and deadlines not so deadly. Built with React, Node.js and MongoDB. Powered by AI features. (In progress)",
-      image: ProjectImage5,
-      tags: ["Next.js", "MongoDB", "AI", "Typescript"],
-      repo: "https://github.com/Keshavs8055/Zenith-Intelligent-Ascent",
-      role: "Full Stack Developer",
-    },
-    {
-      id: "blog",
-      title: "Thorough - A blog Application",
-      description:
-        "A fullstack blog application built with MERN stack. Users can create, edit, delete and view blog posts. Features user authentication and authorization.",
-      image: ProjectImage7,
-      tags: ["MongoDB", "Express", "React", "Node.js"],
-      repo: "https://github.com/Keshavs8055/Thorough-blog",
-      role: "Full Stack Developer",
-    },
-    {
-      id: "monastery",
-      title: "Model Monastry",
-      description:
-        "A python API which allows users to generate, fine-tune and deploy AI models with ease. Built with Flask and integrated with various AI frameworks. (In progress)",
-      image: ProjectImage6,
-      tags: ["Python", "Flask", "AI"],
-      repo: "https://github.com/Keshavs8055/model-monastry-server",
-      role: "Backend Developer",
-    },
-    {
-      id: "portfolio",
-      title: "This Portfolio",
-      description:
-        "The site you are on — SPA built with Next.js, Tailwind and Framer Motion.",
-      image: ProjectImage3,
-      tags: ["React", "Tailwind", "Framer Motion", "Typescript"],
-      repo: "https://github.com/Keshavs8055/Keshav-portfolio",
-      role: "Designer / Full Stack Developer",
-    },
-  ],
 };

@@ -5,23 +5,29 @@
 
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1"
     />
     <meta
       name="theme-color"
-      content="#061022"
+      content="#050505"
     />
+
+    <!-- Primary Meta -->
+    <title>Keshav Sharma | Web Infrastructure Specialist</title>
     <meta
       name="description"
-      content="Keshav Sharma — Frontend developer. I modernize local-business websites (cafés, salons, boutiques) into mobile-first, fast, conversion-ready sites. Free 3-point audit available."
+      content="Keshav Sharma — Web Infrastructure Specialist. I build AI optimized, fast, minimal, SEO-focused and user-first digital experiences for businesses and startups."
     />
+    <!-- TODO -->
+    <!-- <link
+      rel="canonical"
+      href="https://keshavsharma.dev/"
+    /> -->
+
+    <!-- Keywords (low impact but harmless) -->
     <meta
       name="keywords"
-      content="web developer, mern developer, next.js, website redesign, small business websites, website audit"
-    />
-    <link
-      rel="canonical"
-      href="https://yourdomain.com/"
+      content="freelance, web infrastructure specialist, AI optimization, performance optimization, redesign, web development"
     />
 
     <!-- Open Graph -->
@@ -31,24 +37,51 @@
     />
     <meta
       property="og:title"
-      content="Keshav Sharma — Modernize local-business websites"
+      content="Keshav Sharma | Web Infrastructure Specialist"
     />
     <meta
       property="og:description"
-      content="Mobile-first, fast websites for cafés, salons, boutiques and coaches. Conversion-focused and delivered in 7–14 days."
+      content="I build AI optimized, fast, minimal, SEO-focused and user-first digital experiences. I help businesses scale for AI era."
     />
-    <meta
+    <!-- TODO -->
+    <!-- <meta
       property="og:url"
-      content="https://yourdomain.com/"
-    />
-
+      content="https://keshavsharma.dev/"
+    /> -->
     <meta
       property="og:site_name"
       content="Keshav Sharma"
     />
+    <!-- TODO -->
+    <!-- <meta
+      property="og:image"
+      content="https://keshavsharma.dev/og-image.png"
+    /> -->
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+    <meta
+      property="og:image:height"
+      content="630"
+    />
+    <!-- TODO -->
+    <!-- Twitter Card -->
+    <!-- <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Keshav Sharma | Full Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="I build fast, minimal and user-first digital experiences."
+    />
+    <meta
+      name="twitter:image"
+      content="https://keshavsharma.dev/og-image.png"
+    /> -->
 
-    <!-- 
-     Preconnect optimizations (fonts / analytics you use) -->
+    <!-- Preconnect (fonts) -->
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
@@ -59,47 +92,54 @@
       href="https://fonts.googleapis.com"
     />
 
-    <!-- <script type="application/ld+json">
+    <link
+      rel="preload"
+      as="image"
+      href="/vector.webp"
+      imagesrcset="/vector.webp"
+    />
+
+    <!-- Preload main CSS chunk (Vite handles file hashing) -->
+    <link
+      rel="preload"
+      href="/src/main.tsx"
+      as="script"
+    />
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "WebSite",
-            "@id": "https://yourdomain.com/",
-            "url": "https://yourdomain.com/",
-            "name": "Keshav Sharma - Portfolio",
-            "description": "I modernize local-business websites — mobile-first, fast and conversion-ready.",
-            "publisher": { "@id": "https://yourdomain.com/" }
-          },
-          {
             "@type": "Person",
-            "@id": "https://yourdomain.com/",
+            "@id": "/#about",
             "name": "Keshav Sharma",
-            "url": "https://yourdomain.com/",
+            "url": "",
+            "jobTitle": "Web Infrastructure Specialist",
             "sameAs": [
               "https://github.com/keshavs8055",
               "https://www.linkedin.com/in/keshav-sharma-1482b7189"
             ]
           },
           {
-            "@type": "ProfessionalService",
-            "@id": "https://yourdomain.com/#service",
-            "name": "Website Modernization & Redesign",
-            "provider": { "@id": "https://yourdomain.com/" },
-            "serviceType": "Web design and development",
-            "areaServed": "IN",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "email": "mailto:keshavs.0496@gmail.com"
-            }
+            "@type": "WebSite",
+            "@id": "/#website",
+            "url": "",
+            "name": "Keshav Sharma - Portfolio",
+            "description": "High-performance, minimal, and conversion-focused web development.",
+            "publisher": { "@id": "/#about" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "/#webpage",
+            "url": "",
+            "name": "Keshav Sharma | Web Infrastructure Specialist",
+            "description": "Portfolio showcasing UI engineering, performance optimization, and full-stack work."
           }
         ]
       }
-    </script> -->
-
-    <title>Keshav Sharma - Portfolio</title>
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
     <script
