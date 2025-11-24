@@ -1,0 +1,11 @@
+# robots.txt
+# -----------------------------------------
+# Allow all major crawlers to index the site.
+# Update domain here: https://keshav-portfolio.vercel.app/
+# -----------------------------------------
+
+User-agent: *
+Allow: /
+
+Sitemap: https://keshav-portfolio.vercel.app/sitemap.xml
+LLM: https://keshav-portfolio.vercel.app/llms.txt

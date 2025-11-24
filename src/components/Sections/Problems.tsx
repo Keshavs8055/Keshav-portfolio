@@ -1,4 +1,5 @@
 // components/ProblemSolutionSection.tsx
+import React from "react";
 import { motion, type Variants } from "framer-motion";
 import type { JSX } from "react";
 import CTAButton from "../CTA";
@@ -42,12 +43,28 @@ const item: Variants = {
 };
 
 export default function ProblemSolutionSection(): JSX.Element {
+  const id = React.useId();
+  const sectionId = `ai-problem-${id}`;
+  const headingId = `ai-problem-heading-${id}`;
+  const entityLabelId = `ai-entity-${id}`;
+  const DATE_MODIFIED = "2025-11-24";
+
   return (
     <section
-      id="ai-problem"
-      aria-label="Problems businesses face with AI visibility"
+      id={sectionId}
+      aria-labelledby={headingId}
+      data-date-modified={DATE_MODIFIED}
       className=" text-slate-100 max-w-7xl mx-auto p-6 lg:px-4 xl:px-0"
     >
+      {/* Entity Clarity Check (visually hidden): Subject + Predicate + Object */}
+      <p
+        id={entityLabelId}
+        className="sr-only"
+      >
+        I help businesses become AI-visible by fixing technical and content gaps
+        that prevent LLMs from citing them.
+      </p>
+
       <div className="">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start justify-between">
           {/* LEFT: Headline */}
@@ -58,7 +75,10 @@ export default function ProblemSolutionSection(): JSX.Element {
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.45 }}
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-white">
+              <h2
+                id={headingId}
+                className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-white"
+              >
                 Your websites are not AI ready
               </h2>
 
@@ -77,8 +97,9 @@ export default function ProblemSolutionSection(): JSX.Element {
                 <a
                   href="https://docs.google.com/document/d/1eHJtL0nrrf73zjkLjr0jFYoEgJtHu32IRYQXBCGeYYU/edit?usp=sharing"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                   className="underline text-slate-100"
+                  aria-label="Open technical brief in new tab"
                 >
                   AI Readiness for Small Businesses
                 </a>
@@ -94,6 +115,7 @@ export default function ProblemSolutionSection(): JSX.Element {
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
               className="space-y-3"
+              aria-describedby={entityLabelId}
             >
               {problems.map((p, i) => (
                 <motion.li
@@ -102,7 +124,11 @@ export default function ProblemSolutionSection(): JSX.Element {
                   className="flex items-start gap-4 py-4 w-full border-b border-white/50"
                 >
                   <div className="flex-none mt-1">
-                    <span className="inline-block w-3 h-3 rounded-full bg-emerald-400" />
+                    {/* decorative status dot - aria-hidden */}
+                    <span
+                      className="inline-block w-3 h-3 rounded-full bg-emerald-400"
+                      aria-hidden="true"
+                    />
                   </div>
 
                   <div className="min-w-0 grow">
@@ -110,9 +136,14 @@ export default function ProblemSolutionSection(): JSX.Element {
                       <h3 className="text-sm font-semibold text-white truncate">
                         {p.short}
                       </h3>
-                      <span className="text-[11px] text-amber-300/90">
+                      {/* impact is a status-like item (not color-only): include visible label and sr-only clarifier */}
+                      <span
+                        className="text-[11px] text-amber-300/90"
+                        aria-hidden="true"
+                      >
                         {p.impact}
                       </span>
+                      <span className="sr-only">{p.impact}</span>
                     </div>
                     <p className="mt-1 text-xs text-slate-300 leading-snug">
                       {p.line}
@@ -141,6 +172,21 @@ export default function ProblemSolutionSection(): JSX.Element {
           </div>
         </div>
       </div>
+
+      {/* JSON-LD dateModified & basic schema for SSR/prerender indexing */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "AI Readiness — Problems & Solutions",
+            description:
+              "Common technical and content gaps that make businesses invisible to LLMs and generative search.",
+            dateModified: DATE_MODIFIED,
+          }),
+        }}
+      />
     </section>
   );
 }

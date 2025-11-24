@@ -1,0 +1,8 @@
+# security.txt
+# -----------------------------------------
+# Contact information for reporting security issues.
+# Update email here: keshavs.0496@gmail.com
+# -----------------------------------------
+
+Contact: mailto:keshavs.0496@gmail.com
+Preferred-Languages: en

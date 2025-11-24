@@ -5,6 +5,18 @@ import { ChevronDown } from "lucide-react";
 import { Config } from "../config";
 import CTAButton from "../CTA";
 
+/**
+ * Accessibility & AI/business-optimized content only.
+ * - replaced div(role="button") with real <button type="button"> for keyboard semantics
+ * - each item uses unique, prefixed IDs (title, panel) to avoid collisions
+ * - decorative icons marked aria-hidden
+ * - JSON-LD dateModified added (SSR/prerender emit-able)
+ * - added a short declarative sentence near the top for entity clarity
+ * - copy tuned to speak to business owners and AI-readers (subject + predicate + object up-front)
+ *
+ * No changes to visual styling or behavior (motion, transitions) beyond semantics.
+ */
+
 const CONTACT_EMAIL = Config.mailString;
 
 const FAQS: { q: string; a: React.ReactNode }[] = [
@@ -95,6 +107,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
 ];
 
 export default function FAQSection(): JSX.Element {
+  // default open first item (keeps original behavior)
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = useCallback((index: number) => {
@@ -112,15 +125,44 @@ export default function FAQSection(): JSX.Element {
     visible: { height: "auto", opacity: 1 },
   };
 
+  // fresh metadata (checklist #27)
+  const dateModifiedISO = "2025-11-24";
+
+  const makeId = (prefix: string, idx: number) => `${prefix}-${idx}`;
+
   return (
     <section
       id="faq"
       className="p-6 lg:px-4 xl:px-0 max-w-7xl py-12 my-6 mx-auto"
+      aria-labelledby="faq-heading"
     >
+      {/* JSON-LD for crawlable freshness (SSR-prerenderable) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            dateModified: dateModifiedISO,
+          }),
+        }}
+      />
+
       <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+        <h2
+          id="faq-heading"
+          className="text-2xl md:text-3xl font-extrabold text-white"
+        >
           Frequently asked questions
         </h2>
+
+        {/* Entity clarity: Subject + Predicate + Object up-front for AI and business owners */}
+        <p className="mt-3 text-sm text-slate-300 max-w-2xl mx-auto">
+          I am Keshav Sharma — a Frontend Engineer who helps businesses increase
+          revenue and search visibility by modernizing websites with React,
+          Next.js, and performance-first practices.
+        </p>
+
         <p className="mt-2 text-slate-300 max-w-2xl mx-auto">
           Practical answers about audits, pricing, platforms, and how we work.
           If your question isn’t listed, reach out — I reply quickly.
@@ -130,64 +172,59 @@ export default function FAQSection(): JSX.Element {
       <div className="space-y-6">
         {FAQS.map((item, i) => {
           const isOpen = openIndex === i;
+          const titleId = makeId("faq-title", i);
+          const panelId = makeId("faq-panel", i);
+
           return (
             <div
               key={i}
               className={`border-b overflow-hidden ${
                 isOpen ? "bg-linear-to-r from-slate-900 to-slate-700" : ""
               }`}
-              aria-labelledby={`faq-${i}-title`}
             >
-              {/* Entire header clickable — accessible as a button */}
-              <div
-                role="button"
-                tabIndex={0}
-                onClick={() => toggle(i)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    toggle(i);
-                  }
-                }}
-                aria-expanded={isOpen}
-                aria-controls={`faq-panel-${i}`}
-                className={`flex items-center justify-between gap-4 px-5 py-4 cursor-pointer transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 ${
-                  isOpen ? "bg-white/6" : ""
-                }`}
-              >
-                <div className="min-w-0">
-                  <div
-                    id={`faq-${i}-title`}
-                    className="text-md font-semibold text-white truncate"
-                  >
-                    <span className="text-md px-4 text-slate-300">Q</span>{" "}
-                    {item.q}
-                  </div>
-                </div>
-
-                <motion.div
-                  className="ml-4 text-slate-300 flex items-center"
-                  initial={false}
-                  animate={isOpen ? "open" : "closed"}
-                  variants={chevronVariants}
-                  transition={{ type: "spring", stiffness: 320, damping: 28 }}
-                  aria-hidden
+              {/* Use a real button for the header — preserves keyboard semantics, no custom key handlers */}
+              <div className={`px-5 py-4`}>
+                <button
+                  id={titleId}
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  onClick={() => toggle(i)}
+                  className={`w-full flex items-center justify-between gap-4 cursor-pointer transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400`}
                 >
-                  <ChevronDown />
-                </motion.div>
+                  <div className="min-w-0 text-left">
+                    <h3 className="text-md font-semibold text-white truncate">
+                      <span className="text-md px-4 text-slate-300">Q</span>{" "}
+                      {item.q}
+                    </h3>
+                  </div>
+
+                  <motion.span
+                    className="ml-4 text-slate-300 flex items-center"
+                    initial={false}
+                    animate={isOpen ? "open" : "closed"}
+                    variants={chevronVariants}
+                    transition={{ type: "spring", stiffness: 320, damping: 28 }}
+                    aria-hidden="true"
+                  >
+                    <ChevronDown />
+                  </motion.span>
+                </button>
               </div>
 
               <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
-                    id={`faq-panel-${i}`}
-                    key="panel"
+                    id={panelId}
+                    key={`panel-${i}`}
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
                     variants={panelVariants}
                     transition={{ duration: 0.35, ease: "easeInOut" }}
                     className="px-5 pb-5 text-white text-sm bg-white/2"
+                    role="region"
+                    aria-labelledby={titleId}
                   >
                     <div className="pt-3">{item.a}</div>
                   </motion.div>
@@ -197,8 +234,16 @@ export default function FAQSection(): JSX.Element {
           );
         })}
       </div>
+
       <div className="text-center mt-10">
         <CTAButton />
+      </div>
+
+      {/* Visible, SSR-rendered freshness metadata (small and unobtrusive) */}
+      <div className="max-w-7xl mx-auto mt-6 px-6 text-right">
+        <p className="text-xs text-slate-400">
+          <span className="sr-only">Updated: Nov 2025</span>
+        </p>
       </div>
     </section>
   );

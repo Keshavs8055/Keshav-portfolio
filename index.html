@@ -2,38 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1"
+      content="width=device-width, initial-scale=1.0"
     />
     <meta
       name="theme-color"
       content="#050505"
     />
 
-    <!-- Primary Meta -->
-    <title>Keshav Sharma | Web Infrastructure Specialist</title>
+    <!-- Primary Meta Tags -->
+    <title>
+      Keshav Sharma | Web Infrastructure Specialist & Full Stack Developer
+    </title>
+    <meta
+      name="title"
+      content="Keshav Sharma | Web Infrastructure Specialist & Full Stack Developer"
+    />
     <meta
       name="description"
-      content="Keshav Sharma — Web Infrastructure Specialist. I build AI optimized, fast, minimal, SEO-focused and user-first digital experiences for businesses and startups."
+      content="Keshav Sharma is a Web Infrastructure Specialist building AI-optimized, high-performance, and minimal digital experiences. Expert in React, Next.js, SEO, and modern web architecture."
     />
-    <!-- TODO -->
+    <meta
+      name="keywords"
+      content="Web Infrastructure Specialist, Full Stack Developer, AI Optimization, React Developer, Next.js Expert, SEO Specialist, Web Performance, Keshav Sharma, Portfolio, Frontend Engineer, MERN Stack, Python Developer, Headless WordPress, Freelance Developer India"
+    />
+    <meta
+      name="author"
+      content="Keshav Sharma"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <link
       rel="canonical"
       href="https://keshav-portfolio.vercel.app/"
     />
 
-    <!-- Keywords (low impact but harmless) -->
-    <meta
-      name="keywords"
-      content="freelance, web infrastructure specialist, AI optimization, performance optimization, redesign, web development"
-    />
-
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta
       property="og:type"
       content="website"
+    />
+    <meta
+      property="og:url"
+      content="https://keshav-portfolio.vercel.app/"
     />
     <meta
       property="og:title"
@@ -41,21 +55,11 @@
     />
     <meta
       property="og:description"
-      content="I build AI optimized, fast, minimal, SEO-focused and user-first digital experiences. I help businesses scale for AI era."
+      content="Building the next generation of AI-optimized, high-performance web experiences. Expert in React, Next.js, and modern web infrastructure."
     />
-    <!-- TODO -->
-    <meta
-      property="og:url"
-      content="https://keshav-portfolio.vercel.app/"
-    />
-    <meta
-      property="og:site_name"
-      content="Keshav Sharma"
-    />
-    <!-- TODO -->
     <meta
       property="og:image"
-      content="https://keshav-portfolio.vercel.app/vector.webp"
+      content="https://keshav-portfolio.vercel.app/open-graph-image.webp"
     />
     <meta
       property="og:image:width"
@@ -65,23 +69,56 @@
       property="og:image:height"
       content="630"
     />
-    <!-- TODO -->
-    <!-- Twitter Card -->
-    <!-- <meta name="twitter:card" content="summary_large_image" />
     <meta
-      name="twitter:title"
-      content="Keshav Sharma | Full Stack Developer"
+      property="og:image:alt"
+      content="Keshav Sharma Portfolio Preview"
     />
     <meta
-      name="twitter:description"
-      content="I build fast, minimal and user-first digital experiences."
+      property="og:site_name"
+      content="Keshav Sharma Portfolio"
     />
     <meta
-      name="twitter:image"
-      content="https://keshavsharma.dev/og-image.png"
-    /> -->
+      property="og:locale"
+      content="en_US"
+    />
 
-    <!-- Preconnect (fonts) -->
+    <!-- Twitter -->
+    <meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      property="twitter:url"
+      content="https://keshav-portfolio.vercel.app/"
+    />
+    <meta
+      property="twitter:title"
+      content="Keshav Sharma | Web Infrastructure Specialist"
+    />
+    <meta
+      property="twitter:description"
+      content="Building AI-optimized, high-performance web experiences. Expert in React, Next.js, and modern web infrastructure."
+    />
+    <meta
+      property="twitter:image"
+      content="https://keshav-portfolio.vercel.app/open-graph-image.webp"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="Keshav Sharma Portfolio Preview"
+    />
+
+    <!-- Geo Tags -->
+    <meta
+      name="geo.region"
+      content="IN"
+    />
+    <meta
+      name="geo.placename"
+      content="India"
+    />
+
+    <!-- Preconnect & Preload -->
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
@@ -91,48 +128,103 @@
       rel="preconnect"
       href="https://fonts.googleapis.com"
     />
-
     <link
       rel="preload"
       as="image"
       href="/vector.webp"
-      imagesrcset="/vector.webp"
     />
 
-    <!-- Preload main CSS chunk (Vite handles file hashing) -->
+    <!-- Favicon -->
+    <!-- fallback .ico (browsers) -->
     <link
-      rel="preload"
-      href="/src/main.tsx"
-      as="script"
+      rel="icon"
+      href="/favicon.ico"
     />
+
+    <!-- SVG preferred if supported -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+
+    <!-- PNG fallbacks -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+
+    <!-- Apple -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+
+    <!-- Optional: mask-icon for Safari pinned tabs (monochrome). Provide a simple version -->
+    <link
+      rel="mask-icon"
+      href="/favicon.svg"
+      color="#be185d"
+    />
+    <meta
+      name="theme-color"
+      content="#7c3aed"
+    />
+    <link
+      rel="manifest"
+      href="/manifest.webmanifest"
+    />
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
             "@type": "Person",
-            "@id": "/#about",
+            "@id": "https://keshav-portfolio.vercel.app/#about",
             "name": "Keshav Sharma",
-            "url": "",
+            "url": "https://keshav-portfolio.vercel.app/",
             "jobTitle": "Web Infrastructure Specialist",
+            "description": "Web Infrastructure Specialist building AI-optimized, high-performance digital experiences.",
+            "image": "https://keshav-portfolio.vercel.app/open-graph-image.webp",
             "sameAs": [
               "https://github.com/keshavs8055",
               "https://www.linkedin.com/in/keshav-sharma-1482b7189"
-            ]
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "IN"
+            }
           },
           {
             "@type": "WebSite",
-            "@id": "/#website",
-            "url": "",
+            "@id": "https://keshav-portfolio.vercel.app/#website",
+            "url": "https://keshav-portfolio.vercel.app/",
             "name": "Keshav Sharma - Portfolio",
             "description": "High-performance, minimal, and conversion-focused web development.",
-            "publisher": { "@id": "/#about" }
+            "publisher": {
+              "@id": "https://keshav-portfolio.vercel.app/#about"
+            },
+            "inLanguage": "en-US"
           },
           {
             "@type": "WebPage",
-            "@id": "/#webpage",
-            "url": "",
+            "@id": "https://keshav-portfolio.vercel.app/#webpage",
+            "url": "https://keshav-portfolio.vercel.app/",
             "name": "Keshav Sharma | Web Infrastructure Specialist",
+            "isPartOf": {
+              "@id": "https://keshav-portfolio.vercel.app/#website"
+            },
+            "about": { "@id": "https://keshav-portfolio.vercel.app/#about" },
             "description": "Portfolio showcasing UI engineering, performance optimization, and full-stack work."
           }
         ]

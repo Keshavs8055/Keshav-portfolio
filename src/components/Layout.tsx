@@ -23,6 +23,13 @@ export default function Layout({ children }: LayoutProps) {
 
       <footer className="py-8 text-center text-text-muted text-sm">
         <p>© {new Date().getFullYear()} Keshav Sharma. All rights reserved.</p>
+        <p
+          className="text-xs text-slate-400"
+          aria-hidden={false}
+        >
+          <span className="sr-only">Last updated:</span>
+          Updated: Nov 2025
+        </p>
       </footer>
     </div>
   );

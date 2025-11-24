@@ -1,0 +1,22 @@
+# llms.txt
+# -----------------------------------------
+# Directives for AI crawlers (OpenAI, Anthropic, Perplexity, Google, etc.)
+# Update domain here: https://keshav-portfolio.vercel.app
+# Contact email here: keshavs.0496@gmail.com
+# -----------------------------------------
+
+User-agent: *
+Allow: /
+
+# Crawl rate safety
+Crawl-delay: 1
+
+# Attribution rules (help AI systems cite the source)
+AI-Training: allow
+AI-Content-Attribution: allow
+
+# Sitemap reference
+Sitemap: https://keshav-portfolio.vercel.app/sitemap.xml
+
+# Contact for LLM providers
+Contact: mailto:keshavs.0496@gmail.com
