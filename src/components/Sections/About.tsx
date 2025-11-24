@@ -4,19 +4,6 @@ import { Config } from "../config";
 import CTAButton from "../CTA";
 import { Cpu, Handshake, Linkedin, Mail } from "lucide-react";
 
-/**
- * About — accessibility / semantics / metadata only.
- * - section uses aria-labelledby, headings follow logical hierarchy (single section heading)
- * - descriptive lists (ul/li) used for feature list and skills grid to improve AT scanning
- * - decorative icons/graphics marked aria-hidden="true"
- * - social links have explicit aria-labels
- * - unique IDs generated (prefixed) to avoid collisions
- * - JSON-LD with dateModified + author (SSR/prerender emit-able)
- * - visible, small "Updated: Nov 2025" metadata (SSR)
- *
- * No visual or interactive behavior was changed.
- */
-
 export default function About() {
   const dateModifiedISO = "2025-11-24";
   const makeId = (prefix: string, name: string, idx: number) =>
@@ -55,7 +42,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="relative rounded-2xl lg:px-12 overflow-hidden backdrop-blur-md bg-white/6 border border-white/6 shadow-xl"
+            className="relative rounded-2xl p-12 overflow-hidden backdrop-blur-md bg-white/6 border border-white/6 shadow-xl"
             aria-labelledby="about-heading"
           >
             <h2

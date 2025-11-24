@@ -1,15 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import compression from "vite-plugin-compression";
-import { visualizer } from "rollup-plugin-visualizer";
 import tailwindcss from "@tailwindcss/vite";
+import vike from "vike/plugin";
 
 export default defineConfig({
   plugins: [
     react(),
     compression({ algorithm: "gzip", ext: ".gz", deleteOriginFile: false }),
-    visualizer({ filename: "dist/bundle-visualizer.html", open: false }),
     tailwindcss(),
+    vike(),
   ],
   build: {
     target: "es2019",
