@@ -13,17 +13,13 @@ const LINKS: NavLink[] = [
 ];
 
 export default function Nav() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const id = React.useId();
   const menuId = `nav-menu-${id}`;
   const menuLabelId = `nav-menu-label-${id}`;
   const buttonRef = React.useRef<HTMLButtonElement | null>(null);
   const menuRef = React.useRef<HTMLDivElement | null>(null);
   const previouslyFocused = React.useRef<HTMLElement | null>(null);
-
-  React.useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-  }, [open]);
 
   // Focus management: trap focus inside mobile menu when open and restore focus on close
   React.useEffect(() => {
@@ -95,12 +91,10 @@ export default function Nav() {
 
   return (
     <nav
-      // kept original styling and semantics
-      className="fixed max-w-7xl from-violet-600 via-fuchsia-700 to-pink-700 bg-linear-60 mx-auto inset-x-0 top-0 z-50 rounded-b-lg overflow-hidden"
+      className="fixed w-3/4 rounded-2xl max-w-7xl from-violet-600 via-fuchsia-700 to-pink-700 bg-linear-60 mx-auto inset-x-0 bottom-2 md:top-0 md:bottom-auto md:w-full md:rounded-none md:rounded-b-4xl z-50 rounded-b-lg overflow-hidden"
       aria-label="Primary navigation"
       data-date-modified={DATE_MODIFIED}
     >
-      {/* Entity Clarity Check: a short, visually-hidden declarative statement */}
       <span
         id={menuLabelId}
         className="sr-only"
@@ -218,7 +212,6 @@ export default function Nav() {
                 exit={{ opacity: 0 }}
               >
                 <motion.div
-                  // Keep same animation, styling & role
                   initial={{ y: -8, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -6, opacity: 0 }}

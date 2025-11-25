@@ -19,21 +19,23 @@ export default function Layout({ children }: LayoutProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="pt-24 x-auto"
+          className="pb-24 md:pt-24 md:pb-0 x-auto"
         >
           {children}
+          <footer className="py-8 text-center text-text-muted text-sm">
+            <p>
+              © {new Date().getFullYear()} Keshav Sharma. All rights reserved.
+            </p>
+            <p
+              className="text-xs text-slate-400"
+              aria-hidden={false}
+            >
+              <span className="sr-only">Last updated:</span>
+              Updated: Nov 2025
+            </p>
+          </footer>
         </motion.main>
       </AnimatePresence>
-      <footer className="py-8 text-center text-text-muted text-sm">
-        <p>© {new Date().getFullYear()} Keshav Sharma. All rights reserved.</p>
-        <p
-          className="text-xs text-slate-400"
-          aria-hidden={false}
-        >
-          <span className="sr-only">Last updated:</span>
-          Updated: Nov 2025
-        </p>
-      </footer>
     </div>
   );
 }

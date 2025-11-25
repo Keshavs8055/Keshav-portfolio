@@ -37,19 +37,19 @@ const Page = (): JSX.Element => {
       : "Error";
 
   return (
-    <div className="min-h-screen min-w-screen max-w-screen max-h-screen absolute flex items-center justify-center top-0 bg-linear-180 from-black via-black to-purple-900/50 text-text-main selection:bg-primary/30 selection:text-primary overflow-x-hidden">
+    <div className="min-h-screen min-w-screen max-w-screen max-h-screen absolute flex items-center justify-center top-0 bg-linear-180 from-pink-500 to-purple-500 text-text-main selection:bg-primary/30 selection:text-primary overflow-x-hidden">
       <motion.main
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -8 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className="w-full max-w-2xl  border border-white"
+        className="w-full max-w-2xl "
         role="main"
         aria-labelledby="error-title"
       >
-        <div className="flex items-start justify-between gap-6 p-10 rounded-2xl bg-black/10 relative backdrop-blur-2xl z-50">
+        <div className="flex items-start justify-between gap-6 p-10 rounded-2xl bg-black/50 relative backdrop-blur-2xl z-50">
           <div
-            className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary font-semibold text-2xl"
+            className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-primary/10  font-semibold text-2xl"
             aria-hidden
           >
             {statusLabel}
@@ -64,7 +64,7 @@ const Page = (): JSX.Element => {
             </h1>
 
             <p
-              className="mt-3 text-sm text-text-muted leading-relaxed"
+              className="mt-3 text-sm leading-relaxed"
               aria-live="polite"
             >
               {msg}
