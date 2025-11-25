@@ -91,7 +91,8 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed max-w-7xl from-violet-600 via-fuchsia-700 to-pink-700 bg-linear-60 mx-auto inset-x-0 bottom-0 rounded-none md:top-0 md:bottom-auto md:rounded-b-4xl z-50 overflow-hidden"
+      className="fixed top-0 max-w-7xl from-violet-600 
+      via-fuchsia-700 to-pink-700 bg-linear-60 mx-auto inset-x-0 rounded-none md:rounded-b-4xl z-50 overflow-hidden"
       aria-label="Primary navigation"
       data-date-modified={DATE_MODIFIED}
     >
@@ -103,10 +104,8 @@ export default function Nav() {
       </span>
 
       <div>
-        {/* glass pill container */}
         <div
           className="p-1 backdrop-blur-xl "
-          // gradient overlay: subtle, light, translucent so underlying dark page shows through
           style={{
             background:
               "linear-gradient(90deg, rgba(236,72,153,0.10) 0%, rgba(249,115,22,0.08) 35%, rgba(139,92,246,0.07) 70%, rgba(167,139,250,0.06) 100%)",

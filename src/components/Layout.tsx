@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePageContext } from "vike-react/usePageContext";
+import SiteSpeakChatbot from "./Main/SiteSpeak";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ export default function Layout({ children }: LayoutProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="pb-24 md:pt-24 md:pb-0 x-auto"
+          className="pt-24 x-auto"
         >
           {children}
           <footer className="py-8 text-center text-text-muted text-sm">
@@ -34,6 +35,7 @@ export default function Layout({ children }: LayoutProps) {
               Updated: Nov 2025
             </p>
           </footer>
+          <SiteSpeakChatbot />
         </motion.main>
       </AnimatePresence>
     </div>
