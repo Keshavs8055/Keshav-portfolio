@@ -42,7 +42,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="relative rounded-2xl p-12 overflow-hidden backdrop-blur-md bg-white/6 border border-white/6 shadow-xl"
+            className="relative rounded-2xl p-1 lg:p-12 overflow-hidden backdrop-blur-md bg-white/6 border border-white/6 shadow-xl"
             aria-labelledby="about-heading"
           >
             <h2
@@ -147,10 +147,10 @@ export default function About() {
             </div>
 
             <div className="mt-8">
-              <div className="flex items-center gap-3">
-                <div className="grow lg:grow-0">
-                  <CTAButton />
-                </div>
+              <div className="text-center">
+                <CTAButton />
+              </div>
+              <div className="flex justify-center my-4 items-center gap-3">
                 <a
                   href="https://www.linkedin.com/in/keshav-sharma-1482b7189/"
                   className="px-6 py-3 text-white border border-white/6 rounded-full font-medium overflow-hidden"
