@@ -13,7 +13,7 @@ const LINKS: NavLink[] = [
 ];
 
 export default function Nav() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const id = React.useId();
   const menuId = `nav-menu-${id}`;
   const menuLabelId = `nav-menu-label-${id}`;
@@ -91,7 +91,7 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed w-3/4 rounded-2xl max-w-7xl from-violet-600 via-fuchsia-700 to-pink-700 bg-linear-60 mx-auto inset-x-0 bottom-2 md:top-0 md:bottom-auto md:w-full md:rounded-none md:rounded-b-4xl z-50 rounded-b-lg overflow-hidden"
+      className="fixed max-w-7xl from-violet-600 via-fuchsia-700 to-pink-700 bg-linear-60 mx-auto inset-x-0 bottom-0 rounded-none md:top-0 md:bottom-auto md:rounded-b-4xl z-50 overflow-hidden"
       aria-label="Primary navigation"
       data-date-modified={DATE_MODIFIED}
     >
@@ -112,7 +112,7 @@ export default function Nav() {
               "linear-gradient(90deg, rgba(236,72,153,0.10) 0%, rgba(249,115,22,0.08) 35%, rgba(139,92,246,0.07) 70%, rgba(167,139,250,0.06) 100%)",
           }}
         >
-          <div className="flex items-center justify-between gap-4 px-3 py-2">
+          <div className="flex items-center justify-between gap-4 px-3 lg:py-2">
             {/* left: brand */}
             <div className="flex items-center gap-3">
               <a
