@@ -128,7 +128,7 @@ export function Head() {
       />
       <meta
         property="og:image:alt"
-        content="Keshav Sharma Portfolio Preview"
+        content="Web Infrastructure Specialist - Brief description"
       />
       <meta
         property="og:locale"
@@ -183,11 +183,7 @@ export function Head() {
         rel="icon"
         href="/favicon.ico"
       />
-      <link
-        rel="icon"
-        type="image/svg+xml"
-        href="/favicon.svg"
-      />
+
       <link
         rel="apple-touch-icon"
         sizes="180x180"

@@ -40,7 +40,7 @@ export default function Contact() {
         }}
       />
 
-      <div className="p-6 lg:px-4 xl:px-0 max-w-7xl mx-auto relative">
+      <div className="p-12 lg:px-4 xl:px-0 max-w-7xl mx-auto relative">
         {/* Decorative shapes — explicitly hidden from AT */}
         <div
           className="absolute w-50 h-50 border-8 border-pink-900/90   bottom-10 right-40 rounded-4xl z-0 pointer-events-none"
@@ -51,7 +51,7 @@ export default function Contact() {
           aria-hidden="true"
         />
 
-        <div className="max-w-4xl mx-auto text-center bg-black/5 backdrop-blur-xl border border-white/10 rounded-2xl py-8">
+        <div className="max-w-4xl mx-auto text-center bg-black/5 backdrop-blur-xl border border-white/10 rounded-2xl p-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

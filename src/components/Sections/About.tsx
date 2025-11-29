@@ -42,7 +42,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="relative rounded-2xl p-1 lg:p-12 overflow-hidden backdrop-blur-md bg-white/6 border border-white/6 shadow-xl"
+            className="relative rounded-2xl p-5  lg:p-12 overflow-hidden backdrop-blur-md bg-white/6 border border-white/6 shadow-xl"
             aria-labelledby="about-heading"
           >
             <h2

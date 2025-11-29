@@ -1,8 +1,8 @@
-/* humans.txt */
-/* -----------------------------------------
-   Who built this site?
-   Update domain here: keshav-portfolio.vercel.app/
--------------------------------------------- */
+# humans.txt
+# -----------------------------------------
+# Who built this site?
+# Update domain here: keshav-portfolio.vercel.app/
+# -----------------------------------------
 
 Developer: Keshav Sharma
 Specialization: Web Infrastructure, Performance, React / Next.js
