@@ -32,7 +32,7 @@ export default function Landing() {
   const entityLabelId = `entity-${id}`;
 
   // Component-level freshness metadata (Date Modified Check)
-  const DATE_MODIFIED = "2025-11-24";
+  const DATE_MODIFIED = "2025-11-30";
 
   return (
     <section
@@ -146,7 +146,7 @@ export default function Landing() {
             variants={itemVariants}
             className="pt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-sm text-text-muted"
           >
-            <div
+            {/* <div
               className="flex -space-x-2"
               aria-hidden
             >
@@ -159,9 +159,18 @@ export default function Landing() {
                   {i}
                 </div>
               ))}
-            </div>
+            </div> */}
             <p className="whitespace-nowrap">
-              Trusted by local businesses • Audits & small fixes
+              Worked for{" "}
+              <a
+                href="https://high1digital.com/"
+                aria-description="Opens High1Digital"
+                arela-label="Opens High1Digital"
+                className="underline"
+              >
+                High1Digital
+              </a>{" "}
+              • Developer
             </p>
           </motion.div>
 

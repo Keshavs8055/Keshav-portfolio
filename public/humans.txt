@@ -1,12 +1,12 @@
 # humans.txt
 # -----------------------------------------
 # Who built this site?
-# Update domain here: keshav-portfolio.vercel.app/
+# Update domain here: webtuner.me/
 # -----------------------------------------
 
 Developer: Keshav Sharma
 Specialization: Web Infrastructure, Performance, React / Next.js
-Website: keshav-portfolio.vercel.app/
+Website: webtuner.me/
 GitHub: https://github.com/keshavs8055
 LinkedIn: https://www.linkedin.com/in/keshav-sharma-1482b7189
 

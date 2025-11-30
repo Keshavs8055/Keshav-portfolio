@@ -4,13 +4,13 @@ export function Head() {
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://keshav-portfolio.vercel.app/#about",
+        "@id": "https://webtuner.me/#about",
         name: "Keshav Sharma",
-        url: "https://keshav-portfolio.vercel.app/",
+        url: "https://webtuner.me/",
         jobTitle: "Web Infrastructure Specialist",
         description:
           "Web Infrastructure Specialist building AI-optimized, high-performance digital experiences.",
-        image: "https://keshav-portfolio.vercel.app/open-graph-image.webp",
+        image: "https://webtuner.me/open-graph-image.webp",
         sameAs: [
           "https://github.com/keshavs8055",
           "https://www.linkedin.com/in/keshav-sharma-1482b7189",
@@ -30,48 +30,37 @@ export function Head() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://keshav-portfolio.vercel.app/#website",
-        url: "https://keshav-portfolio.vercel.app/",
+        "@id": "https://webtuner.me/#website",
+        url: "https://webtuner.me/",
         name: "Keshav Sharma — Portfolio",
         description:
           "High-performance, minimal, conversion-focused web development.",
         publisher: {
-          "@id": "https://keshav-portfolio.vercel.app/#about",
+          "@id": "https://webtuner.me/#about",
         },
         inLanguage: "en-IN",
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://keshav-portfolio.vercel.app/?s={search_term_string}",
+          target: "https://webtuner.me/?s={search_term_string}",
           "query-input": "required name=search_term_string",
         },
       },
       {
         "@type": "WebPage",
-        "@id": "https://keshav-portfolio.vercel.app/#webpage",
-        url: "https://keshav-portfolio.vercel.app/",
+        "@id": "https://webtuner.me/#webpage",
+        url: "https://webtuner.me/",
         name: "Keshav Sharma | Web Infrastructure Specialist",
-        isPartOf: { "@id": "https://keshav-portfolio.vercel.app/#website" },
-        about: { "@id": "https://keshav-portfolio.vercel.app/#about" },
+        isPartOf: { "@id": "https://webtuner.me/#website" },
+        about: { "@id": "https://webtuner.me/#about" },
         description:
           "Portfolio showcasing UI engineering, performance optimization, and full-stack projects.",
       },
     ],
   };
-
   return (
     <>
       <meta charSet="UTF-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-      />
 
-      {/* Title + description: concise and front-loaded */}
-      <title>Keshav Sharma — Web Infrastructure Specialist</title>
-      <meta
-        name="description"
-        content="Web Infrastructure Specialist building AI-optimized, performant web applications using React, Next.js and modern architecture."
-      />
       <meta
         name="author"
         content="Keshav Sharma"
@@ -90,7 +79,7 @@ export function Head() {
       />
       <link
         rel="canonical"
-        href="https://keshav-portfolio.vercel.app/"
+        href="https://webtuner.me/"
       />
 
       {/* Open Graph */}
@@ -100,11 +89,11 @@ export function Head() {
       />
       <meta
         property="og:site_name"
-        content="Keshav Sharma Portfolio"
+        content="Web Infrastructure Specialist"
       />
       <meta
         property="og:url"
-        content="https://keshav-portfolio.vercel.app/"
+        content="https://webtuner.me/"
       />
       <meta
         property="og:title"
@@ -116,7 +105,7 @@ export function Head() {
       />
       <meta
         property="og:image"
-        content="https://keshav-portfolio.vercel.app/open-graph-image.webp"
+        content="https://webtuner.me/open-graph-image.webp"
       />
       <meta
         property="og:image:width"
@@ -150,7 +139,7 @@ export function Head() {
       />
       <meta
         name="twitter:image"
-        content="https://keshav-portfolio.vercel.app/open-graph-image.webp"
+        content="https://webtuner.me/open-graph-image.webp"
       />
 
       {/* Geo hints (ok to keep but not relied upon by search engines) */}

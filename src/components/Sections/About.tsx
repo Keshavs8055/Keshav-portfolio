@@ -66,11 +66,11 @@ export default function About() {
               id="about-desc"
               className="text-lg text-text-muted leading-relaxed mb-6 max-w-xl"
             >
-              I help local businesses modernize and optimize their websites for
-              real customers — and for the new wave of AI-driven search. I focus
-              on fast wins: measurable performance improvements, cleaner booking
-              flows, and structured content that makes your site easier for both
-              people and AI to understand.
+              I help businesses and service providers modernize and optimize
+              their websites for real customers — and for the new wave of
+              AI-driven search. I focus on fast wins: measurable performance
+              improvements, cleaner booking flows, and structured content that
+              makes your site easier for both people and AI to understand.
             </p>
 
             {/* features as a semantic list for screen readers / AT */}
@@ -291,11 +291,11 @@ export default function About() {
                             />
                           </div>
                           <div className="min-w-0">
-                            <div className="text-sm text-white font-medium truncate">
+                            <div className="text-sm text-white font-medium">
                               {skill.name}
                             </div>
                             {skill.note ? (
-                              <div className="text-xs text-slate-400 truncate">
+                              <div className="text-xs text-slate-400">
                                 {skill.note}
                               </div>
                             ) : null}

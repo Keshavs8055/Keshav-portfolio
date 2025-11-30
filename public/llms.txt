@@ -12,7 +12,7 @@ ENTITY:
     - React, Next.js, MERN development
     - UI/UX modernization, mobile-first polish
   location: India
-  website: https://keshav-portfolio.vercel.app/
+  website: https://webtuner.me/
   contact_email: keshavs.0496@gmail.com
   schedule_link: https://koalendar.com/e/meet-with-keshav-sharma
   social:
