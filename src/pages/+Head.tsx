@@ -65,7 +65,10 @@ export function Head() {
         name="author"
         content="Keshav Sharma"
       />
-
+      <meta
+        name="application-name"
+        content="WebTuner - Web infrastructure Specialist"
+      />
       {/* Keep keywords short (optional) */}
       <meta
         name="keywords"
@@ -170,9 +173,14 @@ export function Head() {
 
       <link
         rel="icon"
+        sizes="any"
         href="/favicon.ico"
       />
-
+      <link
+        rel="icon"
+        type="image/png"
+        href="/android-chrome-192x192.png"
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
