@@ -144,6 +144,64 @@ export default function FAQSection(): JSX.Element {
             "@context": "https://schema.org",
             "@type": "FAQPage",
             dateModified: dateModifiedISO,
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Is the audit really free and what will I get?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes — the audit is free. You get a short recorded walkthrough and a one-page PDF with three prioritized, high-impact recommendations: a speed and Core Web Vitals snapshot, the top UX or conversion blockers, and one prioritized next step with an estimated cost.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do you price work after the audit?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Work after the audit is priced based on the size and complexity of the changes. I group fixes into clear bundles or phases so you can choose what to implement now and what to schedule later.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Which platforms and tech do you work with?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "I primarily work with React, Next.js, MERN, WordPress and Wix, plus supporting tools like Firebase and modern hosting platforms. I focus on performance, Core Web Vitals, and structured data across these stacks.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Will you handle speed and basic SEO?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. Speed and basic SEO are built into my work: performance optimization, Core Web Vitals, metadata, structured data and crawlability checks are included in my recommendations and implementation.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How quickly can you make small fixes or updates?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Most small fixes and content updates are turned around in about one to three days, depending on scope and access to your existing setup.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Do you take one-off fixes or hourly tasks?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Yes. I take one-off fixes and short hourly tasks for things like bug fixes, content updates, and small performance tweaks.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How do I get started?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "You can start by requesting a free audit, scheduling a call, or emailing me with your website link, goals, timeline and budget range. I’ll reply with a clear next step and options.",
+                },
+              },
+            ],
           }),
         }}
       />
