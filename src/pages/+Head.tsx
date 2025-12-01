@@ -179,7 +179,7 @@ export function Head() {
       <link
         rel="icon"
         type="image/png"
-        href="/android-chrome-192x192.png"
+        href="/favicon.png"
       />
       <link
         rel="apple-touch-icon"
