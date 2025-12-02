@@ -1,36 +1,14 @@
-// components/ProblemSolutionSection.tsx
 import React from "react";
 import { motion, type Variants } from "framer-motion";
 import type { JSX } from "react";
 import CTAButton from "../CTA";
 
-const problems = [
-  {
-    short: "AI zero-click answers",
-    line: "Search often returns single AI summaries — many customers never reach your site.",
-    impact: "Missed leads & lost revenue",
-  },
-  {
-    short: "Client-side rendering blindspots",
-    line: "Important content rendered in JS can be skipped by crawlers and LLM indexers.",
-    impact: "Partial indexing → lower visibility",
-  },
-  {
-    short: "Inconsistent business data",
-    line: "Different name/address/phone across platforms confuses AI entity resolution.",
-    impact: "AI won't confidently cite you",
-  },
-  {
-    short: "Missing trust signals",
-    line: "No staff bios, service reviews, or verifiable credentials for AI to reference.",
-    impact: "Excluded from high-value answers",
-  },
-  {
-    short: "Content not conversational",
-    line: "Copy written for keywords, not the question-and-answer style LLMs prefer.",
-    impact: "Not surfaced for natural queries",
-  },
-];
+/**
+ * Minimal, airy, client-focused Problem → Cost → Solution section.
+ * - Replaces dense table with stacked cards for mobile and roomy two-column grid on desktop.
+ * - Keeps accessibility, schema (with keywords), and CTA composition.
+ * - DATE_MODIFIED should be programmatically updated at build-time if possible.
+ */
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -39,7 +17,7 @@ const container: Variants = {
 
 const item: Variants = {
   hidden: { opacity: 0, y: 8 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.38, ease: "easeOut" } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.36, ease: "easeOut" } },
 };
 
 export default function ProblemSolutionSection(): JSX.Element {
@@ -47,143 +25,176 @@ export default function ProblemSolutionSection(): JSX.Element {
   const sectionId = `ai-problem-${id}`;
   const headingId = `ai-problem-heading-${id}`;
   const entityLabelId = `ai-entity-${id}`;
-  const DATE_MODIFIED = "2025-11-24";
+  const DATE_MODIFIED = "2025-12-02";
+
+  const cards = [
+    {
+      title: "“Our website is fine — we rely on word-of-mouth.”",
+      cost: "Missed revenue — fewer calls & fewer walk-ins.",
+      solution:
+        "Geo-optimized presence (GBP + LocalBusiness schema + NAP sync).",
+    },
+    {
+      title: "“My site is slow — it's not urgent.”",
+      cost: "High abandonment and fewer conversions.",
+      solution: "Performance audit, image & asset optimization, CDN + caching.",
+    },
+    {
+      title: "“We don't need 'AI' on our site.”",
+      cost: "Excluded from AI-driven answers and zero-click discovery.",
+      solution:
+        "FAQ & Service Schema + conversational Q&A copy for AI quoting.",
+    },
+  ];
 
   return (
     <section
       id={sectionId}
       aria-labelledby={headingId}
       data-date-modified={DATE_MODIFIED}
-      className=" text-slate-100 max-w-7xl mx-auto p-6 lg:px-4 xl:px-0"
+      className="text-slate-100 max-w-7xl mx-auto py-12 md:py-16"
+      role="region"
     >
-      {/* Entity Clarity Check (visually hidden): Subject + Predicate + Object */}
+      {/* SEO-friendly entity label for assistive tech & indexers */}
       <p
         id={entityLabelId}
         className="sr-only"
       >
-        I help businesses become AI-visible by fixing technical and content gaps
-        that prevent LLMs from citing them.
+        We make local businesses visible to customers by fixing performance,
+        local listings, and structured content so search engines and AI can
+        confidently reference them.
       </p>
 
-      <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start justify-between">
-          {/* LEFT: Headline */}
-          <div className="lg:col-span-6">
-            <motion.div
-              initial={{ opacity: 0, x: -8 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.45 }}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 ">
+        {/* Left: Headline + short pitch */}
+        <div className="lg:col-span-5">
+          <motion.div
+            initial={{ opacity: 0, x: -6 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.45 }}
+          >
+            <h2
+              id={headingId}
+              className="text-3xl sm:text-4xl font-extrabold leading-tight text-white"
             >
-              <h2
-                id={headingId}
-                className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-white"
+              Your business isn’t showing up for customers. Fix it fast.
+            </h2>
+
+            <p className="mt-4 text-md text-slate-300 leading-relaxed max-w-lg">
+              No jargon. No long audits. I find the three fixes that move the
+              needle — speed, local listings, and machine-readable content — and
+              show the expected impact in plain numbers.
+            </p>
+
+            <div className="mt-8 flex items-center gap-4">
+              <CTAButton />
+              <a
+                href="mailto:keshavs.0496@gmail.com?subject=Free%20AI-Readiness%20Audit"
+                className="text-sm text-slate-300 underline"
+                aria-label="Email to request free audit"
               >
-                Your websites are not AI ready
-              </h2>
+                Or request audit by email
+              </a>
+            </div>
 
-              <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-lg">
-                LLMs and generative search changed discovery. Below are the
-                avoidable technical and content gaps that make businesses
-                invisible to AI — and cost real customers.
-              </p>
+            <p className="mt-4 text-xs text-slate-400 max-w-sm">
+              Free one-page audit → three prioritized fixes + estimated impact.
+            </p>
+          </motion.div>
+        </div>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                <CTAButton />
-              </div>
-
-              <div className="mt-5 text-xs text-slate-400">
-                Technical brief:{" "}
-                <a
-                  href="https://docs.google.com/document/d/1eHJtL0nrrf73zjkLjr0jFYoEgJtHu32IRYQXBCGeYYU/edit?usp=sharing"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="underline text-slate-100"
-                  aria-label="Open technical brief in new tab"
+        {/* Right: Cards (mobile-first stack, desktop two-column) */}
+        <div className="lg:col-span-7">
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25 }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            aria-describedby={entityLabelId}
+          >
+            {cards.map((c, i) => (
+              <motion.article
+                key={i}
+                variants={item}
+                className="p-6 rounded-2xl bg-slate-900/40 border border-white/6 shadow-sm"
+                aria-labelledby={`${sectionId}-card-${i}-title`}
+                role="article"
+              >
+                <h3
+                  id={`${sectionId}-card-${i}-title`}
+                  className="text-sm font-semibold text-white leading-snug"
                 >
-                  AI Readiness for Small Businesses
-                </a>
-              </div>
-            </motion.div>
-          </div>
+                  {c.title}
+                </h3>
 
-          {/* RIGHT: Minimal problem list */}
-          <div className="lg:col-span-6">
+                <div className="mt-3 space-y-2 text-sm leading-relaxed">
+                  <p className="text-amber-300 font-medium">{c.cost}</p>
+                  <p className="text-slate-300">{c.solution}</p>
+                </div>
+              </motion.article>
+            ))}
+          </motion.div>
+
+          <div className="mt-8">
             <motion.ul
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              className="space-y-3"
-              aria-describedby={entityLabelId}
-            >
-              {problems.map((p, i) => (
-                <motion.li
-                  key={i}
-                  variants={item}
-                  className="flex items-start gap-4 py-4 w-full border-b border-white/50"
-                >
-                  <div className="flex-none mt-1">
-                    {/* decorative status dot - aria-hidden */}
-                    <span
-                      className="inline-block w-3 h-3 rounded-full bg-emerald-400"
-                      aria-hidden="true"
-                    />
-                  </div>
-
-                  <div className="min-w-0 grow">
-                    <div className="flex items-baseline justify-between gap-3 space-y-3">
-                      <h3 className="text-sm font-semibold text-white truncate">
-                        {p.short}
-                      </h3>
-                      {/* impact is a status-like item (not color-only): include visible label and sr-only clarifier */}
-                      <span
-                        className="text-[11px] text-amber-300/90"
-                        aria-hidden="true"
-                      >
-                        {p.impact}
-                      </span>
-                      <span className="sr-only">{p.impact}</span>
-                    </div>
-                    <p className="mt-1 text-xs text-slate-300 leading-snug">
-                      {p.line}
-                    </p>
-                  </div>
-                </motion.li>
-              ))}
-            </motion.ul>
-
-            {/* small callout */}
-            <motion.div
               initial={{ opacity: 0, y: 6 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: 0.06 }}
-              className="mt-6 flex items-center justify-between gap-4 bg-transparent text-sm text-slate-300"
+              transition={{ duration: 0.36 }}
+              className="flex flex-col sm:flex-row gap-3"
             >
-              <div>
-                <strong className="text-white">What owners need now</strong>
-                <div className="mt-1 text-xs text-slate-400">
-                  Fast mobile pages, consistent business data, visible trust
-                  signals, and FAQ answers that LLMs can quote.
-                </div>
-              </div>
-            </motion.div>
+              <li className="text-xs text-slate-400">
+                <strong className="text-white">Immediate wins:</strong> Faster
+                pages, consistent listings, and AI-readable FAQs.
+              </li>
+              <li className="text-xs text-slate-400">
+                <strong className="text-white">Typical delivery:</strong> 3
+                prioritized fixes in a PDF + optional implementation.
+              </li>
+            </motion.ul>
           </div>
         </div>
       </div>
 
-      {/* JSON-LD dateModified & basic schema for SSR/prerender indexing */}
+      {/* SEO-focused JSON-LD & simple metadata for structured results */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: "AI Readiness — Problems & Solutions",
+            "@type": "Service",
+            serviceType: "Local SEO & Web Infrastructure Audit",
+            provider: {
+              "@type": "Person",
+              name: "Keshav S.",
+            },
             description:
-              "Common technical and content gaps that make businesses invisible to LLMs and generative search.",
+              "Free technical and strategy audit for local businesses — performance, local listings, and AI-ready content to increase calls and visits.",
+            keywords: [
+              "local seo",
+              "website performance",
+              "core web vitals",
+              "local business schema",
+              "AI readiness",
+              "FAQ schema",
+              "small business web audit",
+            ],
             dateModified: DATE_MODIFIED,
+            mainEntity: {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What does the free audit include?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "A one-page PDF with three prioritized fixes, the expected impact, and estimated costs to implement.",
+                  },
+                },
+              ],
+            },
           }),
         }}
       />
