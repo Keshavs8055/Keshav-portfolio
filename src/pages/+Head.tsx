@@ -9,35 +9,47 @@ export function Head() {
         url: "https://webtuner.me/",
         jobTitle: "Web Infrastructure Specialist",
         description:
-          "Web Infrastructure Specialist building AI-optimized, high-performance digital experiences.",
+          "Web Infrastructure Specialist — audits, performance improvements, SEO and AI-readiness for small businesses and creators.",
         image: "https://webtuner.me/open-graph-image.webp",
+        logo: "https://webtuner.me/favicon.svg",
         sameAs: [
           "https://github.com/keshavs8055",
           "https://www.linkedin.com/in/keshav-sharma-1482b7189",
         ],
         knowsAbout: [
           "Web performance",
+          "Core Web Vitals",
           "React",
           "Next.js",
+          "MERN",
           "SEO",
-          "AI optimization",
-          "infrastructure",
+          "structured data",
+          "AI-readiness",
+          "accessibility",
+          "performance optimization",
+          "Figma",
         ],
         address: {
           "@type": "PostalAddress",
           addressCountry: "IN",
         },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            email: "mailto:keshavs.0496@gmail.com",
+          },
+        ],
       },
+
       {
         "@type": "WebSite",
         "@id": "https://webtuner.me/#website",
         url: "https://webtuner.me/",
-        name: "Keshav Sharma — Portfolio",
+        name: "Keshav Sharma — Web Infrastructure Specialist",
         description:
-          "High-performance, minimal, conversion-focused web development.",
-        publisher: {
-          "@id": "https://webtuner.me/#about",
-        },
+          "AI-optimized, high-performance web development and audits — React, Next.js, SEO and structured data for better visibility.",
+        publisher: { "@id": "https://webtuner.me/#about" },
         inLanguage: "en-IN",
         potentialAction: {
           "@type": "SearchAction",
@@ -45,18 +57,84 @@ export function Head() {
           "query-input": "required name=search_term_string",
         },
       },
+
       {
         "@type": "WebPage",
         "@id": "https://webtuner.me/#webpage",
         url: "https://webtuner.me/",
-        name: "Keshav Sharma | Web Infrastructure Specialist",
+        name: "Keshav Sharma — Web Infrastructure Specialist",
         isPartOf: { "@id": "https://webtuner.me/#website" },
         about: { "@id": "https://webtuner.me/#about" },
         description:
-          "Portfolio showcasing UI engineering, performance optimization, and full-stack projects.",
+          "Portfolio and service page: free audits, SEO, AI-optimizations, and web development for businesses that want to be visible to AI and users.",
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: "https://webtuner.me/open-graph-image.webp",
+        },
+      },
+
+      {
+        "@type": "Service",
+        "@id": "https://webtuner.me/#services",
+        name: "Website Audit (Free)",
+        serviceType: "Audit",
+        description:
+          "Full website audit covering SEO, Core Web Vitals, metadata, AI-readiness and conversion blockers. Deliverable: prioritized recommendations and one-page summary.",
+        provider: { "@id": "https://webtuner.me/#about" },
+        areaServed: "IN",
+        url: "https://webtuner.me/#services",
+        termsOfService: "Free audit; follow-up work priced separately.",
+      },
+
+      {
+        "@type": "Service",
+        name: "SEO Improvements",
+        description:
+          "On-page SEO, metadata fixes, content structure and crawlability improvements.",
+        provider: { "@id": "https://webtuner.me/#about" },
+        priceRange: "₹1,000–2,000",
+      },
+
+      {
+        "@type": "Service",
+        name: "AI Optimizations",
+        description:
+          "Structured data (JSON-LD), LLM-friendly FAQs, content shaping and other AI-readiness work.",
+        provider: { "@id": "https://webtuner.me/#about" },
+        priceRange: "₹5,000–12,000",
+      },
+
+      {
+        "@type": "Service",
+        name: "Web Development & Updates",
+        description:
+          "Site builds, component updates, fixes and small CMS work (WordPress, Wix).",
+        provider: { "@id": "https://webtuner.me/#about" },
+        priceRange: "₨1,000–2,000 per dynamic page (approx.)",
+      },
+
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: "",
+        email: "keshavs.0496@gmail.com",
+        availableLanguage: ["English"],
+      },
+
+      {
+        "@type": "Organization",
+        "@id": "https://webtuner.me/#org",
+        name: "Keshav Sharma",
+        url: "https://webtuner.me/",
+        logo: "https://webtuner.me/favicon.svg",
+        sameAs: [
+          "https://github.com/keshavs8055",
+          "https://www.linkedin.com/in/keshav-sharma-1482b7189",
+        ],
       },
     ],
   };
+
   return (
     <>
       <meta charSet="UTF-8" />
@@ -72,7 +150,7 @@ export function Head() {
       {/* Keep keywords short (optional) */}
       <meta
         name="keywords"
-        content="Web infrastructure, React, Next.js, web performance, SEO"
+        content="AI optimization, Client conversion, Web performance, SEO, AI Readiness"
       />
 
       {/* Indexing */}
@@ -100,11 +178,11 @@ export function Head() {
       />
       <meta
         property="og:title"
-        content="Keshav Sharma — Web Infrastructure Specialist"
+        content="WebTuner - Web Infrastructure Specialist"
       />
       <meta
         property="og:description"
-        content="AI-optimized, high-performance web development. React & Next.js specialist."
+        content="Helping Businesses stand out in AI-era. Optimizing SEO and making the websites more visible to AI."
       />
       <meta
         property="og:image"
@@ -134,11 +212,11 @@ export function Head() {
       />
       <meta
         name="twitter:title"
-        content="Keshav Sharma — Web Infrastructure Specialist"
+        content="WebTuner - Web Infrastructure Specialist"
       />
       <meta
         name="twitter:description"
-        content="AI-optimized, high-performance web development. React & Next.js specialist."
+        content="Helping Businesses stand out in AI-era. Optimizing SEO and making the websites more visible to AI."
       />
       <meta
         name="twitter:image"
