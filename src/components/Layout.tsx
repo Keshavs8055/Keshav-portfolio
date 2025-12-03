@@ -31,10 +31,11 @@ export default function Layout({ children }: LayoutProps) {
               className="text-xs text-slate-400"
               aria-hidden={false}
             >
-              <span className="sr-only">Last updated:</span>
-              Updated: Nov 2025
+              <span className="sr-only">Last updated:</span> Updated: Nov 2025
             </p>
           </footer>
+
+          {/* SiteSpeakChatbot: will show a small launcher and only load the heavy script after user clicks */}
           <SiteSpeakChatbot />
         </motion.main>
       </AnimatePresence>
