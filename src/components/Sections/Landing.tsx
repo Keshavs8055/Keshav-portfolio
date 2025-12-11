@@ -1,7 +1,6 @@
 import React, { memo, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import VECTOR from "/vector.webp";
-import CTAButton from "../CTA";
 
 /**
  * Performance first hero:
@@ -11,21 +10,6 @@ import CTAButton from "../CTA";
  */
 
 const DATE_MODIFIED = "2025-11-30";
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Web performance & AI visibility",
-  description:
-    "Performance optimization, structured data, and monitoring to improve conversions and AI visibility.",
-  serviceType: [
-    "Performance Optimization",
-    "SEO & AI Visibility",
-    "Monitoring",
-  ],
-  provider: { "@type": "Person", name: "Keshav Sharma" },
-  dateModified: DATE_MODIFIED,
-};
 
 const Landing: React.FC = () => {
   const sectionId = `home`;
@@ -86,7 +70,7 @@ const Landing: React.FC = () => {
               transition-transform duration-450 ease-out`}
             style={delayStyle(0)}
           >
-            Your website should convert visitors — not lose them.
+            Fast, Findable & AI-Ready Websites for Small Businesses.
           </h1>
 
           <p
@@ -95,9 +79,9 @@ const Landing: React.FC = () => {
               transition-transform duration-450 ease-out`}
             style={delayStyle(1)}
           >
-            I make sites faster, more visible to search & AI, and more reliable
-            — so you get more customers without raising ad spend. Small,
-            measurable changes. Real business outcomes.
+            I fix performance, SEO, metadata, structured data and Core Web
+            Vitals. Make your site visible to AI tools like ChatGPT and Google's
+            AI search.
           </p>
 
           <ul
@@ -111,28 +95,21 @@ const Landing: React.FC = () => {
                 className="inline-block h-2 w-2 rounded-full bg-emerald-400"
                 aria-hidden="true"
               />
-              <span>Faster pages</span>
+              <span>Pass Core Web Vitals</span>
             </li>
             <li className="flex items-center gap-2">
               <span
                 className="inline-block h-2 w-2 rounded-full bg-amber-300"
                 aria-hidden="true"
               />
-              <span>SEO & AI-ready</span>
+              <span>Rank in AI Search</span>
             </li>
             <li className="flex items-center gap-2">
               <span
                 className="inline-block h-2 w-2 rounded-full bg-sky-400"
                 aria-hidden="true"
               />
-              <span>Zero-drama deploys</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <span
-                className="inline-block h-2 w-2 rounded-full bg-sky-400"
-                aria-hidden="true"
-              />
-              <span>Measurable reporting</span>
+              <span>Fix React/Next.js SEO</span>
             </li>
           </ul>
 
@@ -142,14 +119,19 @@ const Landing: React.FC = () => {
               transition-transform duration-450 ease-out`}
             style={delayStyle(3)}
           >
-            <CTAButton />
+            <a
+              href="/audit"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-primary/90 transition-colors"
+            >
+              Get Free Audit
+            </a>
 
             <a
               href="#services"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm hover:bg-white/5 transition-colors"
               aria-label="See services section"
             >
-              See services
+              View Services
               <ArrowRight
                 className="h-4 w-4"
                 aria-hidden="true"
@@ -221,12 +203,6 @@ const Landing: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Structured data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
     </section>
   );
 };

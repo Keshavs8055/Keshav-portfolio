@@ -1,15 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  RefreshCcw,
-  Sparkles,
-  Wrench,
-  FilePlus,
-  Globe,
-  Layers,
-  Wand2,
-  ArrowRight,
-} from "lucide-react";
-import { Config } from "../config";
+import { RefreshCcw, Sparkles, Layers, Wand2, ArrowRight } from "lucide-react";
 
 /**
  * Accessibility & metadata improvements:
@@ -31,55 +21,31 @@ export default function ServicesSection() {
       short: "Clear, non-technical report with prioritized fixes.",
       highlights: ["Core Web Vitals", "Conversion blockers", "AI-readiness"],
       tag: "Free",
-      cta: { label: "Request audit", href: Config.mailString },
+      cta: { label: "Get Audit", href: "/audit" },
     },
     {
       icon: RefreshCcw,
-      title: "Performance Optimization",
+      title: "Speed & Core Web Vitals",
       short: "Fast load times → higher conversions.",
       highlights: ["Images & assets", "CDN & caching", "Bundle trimming"],
-      tag: "Quote",
-      cta: { label: "Enquire", href: Config.mailString },
+      tag: "Performance",
+      cta: { label: "Learn more", href: "/performance" },
     },
     {
       icon: Sparkles,
-      title: "Modernization (UI/UX)",
-      short: "Polished, mobile-first improvements without a full rebuild.",
-      highlights: ["Mobile polish", "Booking flow", "Brand consistency"],
-      tag: "Quote",
-      cta: { label: "Enquire", href: Config.mailString },
-    },
-    {
-      icon: Wrench,
-      title: "Updates & Fixes",
-      short: "Reliable, quick fixes and urgent support.",
-      highlights: ["Bugs & content", "Performance tweaks", "Integrations"],
-      tag: "Hourly",
-      cta: { label: "Get help", href: Config.mailString },
-    },
-    {
-      icon: FilePlus,
-      title: "Content & Features",
-      short: "Add pages, forms, menus or light integrations.",
-      highlights: ["Pages & forms", "Booking tools", "Automations"],
-      tag: "Quote",
-      cta: { label: "Discuss", href: Config.mailString },
+      title: "AI-Ready SEO",
+      short: "Make your site visible to ChatGPT & AI search.",
+      highlights: ["Structured Data", "Entity Optimization", "Schema.org"],
+      tag: "AI",
+      cta: { label: "Learn more", href: "/ai-seo" },
     },
     {
       icon: Layers,
-      title: "Custom Site (MERN / Next)",
-      short: "Scalable, SEO-aware builds when you need custom code.",
-      highlights: ["SSR/SSG options", "Clean architecture", "Maintainable"],
-      tag: "Project",
-      cta: { label: "Request quote", href: Config.mailString },
-    },
-    {
-      icon: Globe,
-      title: "Managed WordPress / Wix",
-      short: "Business-friendly CMS sites that are fast and secure.",
-      highlights: ["Editor-friendly", "Backups & security", "Optimized"],
-      tag: "Quote",
-      cta: { label: "Enquire", href: Config.mailString },
+      title: "React/Next.js Fixes",
+      short: "Expert fixes for modern web apps.",
+      highlights: ["SSR/SSG", "Hydration Errors", "SEO Optimization"],
+      tag: "Dev",
+      cta: { label: "Learn more", href: "/react-next" },
     },
   ];
 
@@ -91,7 +57,6 @@ export default function ServicesSection() {
       .replace(/(^-|-$)/g, "")}`;
 
   // dateModified for JSON-LD and visible footer meta. Use a stable ISO date (today: 2025-11-24).
-  const dateModifiedISO = "2025-11-24";
 
   return (
     <section
@@ -99,21 +64,6 @@ export default function ServicesSection() {
       aria-labelledby="services-heading"
       className="mx-auto py-20"
     >
-      {/* JSON-LD for structured data freshness (dateModified) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Web / Frontend Services",
-            description:
-              "Audits, performance, modernization, content and custom site builds.",
-            dateModified: dateModifiedISO,
-          }),
-        }}
-      />
-
       <div className="p-6 lg:px-4 xl:px-0 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2
@@ -241,19 +191,13 @@ export default function ServicesSection() {
                       <ArrowRight className="w-4 h-4 opacity-90" />
                     </a>
 
-                    <button
-                      type="button"
-                      onClick={() => {
-                        // scroll to contact or examples section
-                        const el =
-                          document.querySelector("#contact") || document.body;
-                        el?.scrollIntoView({ behavior: "smooth" });
-                      }}
+                    <a
+                      href={s.cta.href}
                       className="text-sm text-slate-300 hover:text-white"
                       aria-label={`More about ${s.title}`}
                     >
                       More
-                    </button>
+                    </a>
                   </div>
                 </div>
 

@@ -2,14 +2,15 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Home, Menu, X } from "lucide-react";
+import UpworkBadge from "../UpworkBadge";
 
 type NavLink = { id: string; label: string; href: string };
 
 const LINKS: NavLink[] = [
-  { id: "services", label: "Services", href: "#services" },
-  { id: "about", label: "About", href: "#about" },
-  { id: "faq", label: "FAQs", href: "#faq" },
-  { id: "contact", label: "Contact", href: "#contact" },
+  { id: "AI-Seo", label: "AI-Seo", href: "/ai-seo" },
+  { id: "Audits", label: "Audits", href: "/audit" },
+  { id: "Performance", label: "Performance", href: "/performance" },
+  { id: "Development", label: "Development", href: "/react-next" },
 ];
 
 export default function Nav() {
@@ -105,7 +106,7 @@ export default function Nav() {
 
       <div>
         <div
-          className="p-1 backdrop-blur-xl "
+          className="backdrop-blur-xl"
           style={{
             background:
               "linear-gradient(90deg, rgba(236,72,153,0.10) 0%, rgba(249,115,22,0.08) 35%, rgba(139,92,246,0.07) 70%, rgba(167,139,250,0.06) 100%)",
@@ -115,7 +116,7 @@ export default function Nav() {
             {/* left: brand */}
             <div className="flex items-center gap-3">
               <a
-                href="#home"
+                href="/"
                 className="flex items-center gap-3 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-300"
                 aria-label="Go to home"
               >
@@ -147,6 +148,9 @@ export default function Nav() {
 
             {/* right: CTA + mobile button */}
             <div className="flex items-center gap-2">
+              <div className="hidden lg:block">
+                <UpworkBadge />
+              </div>
               <a
                 href="#contact"
                 className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 text-black text-sm font-medium shadow-sm hover:scale-[1.02] transition"

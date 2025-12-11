@@ -5,7 +5,6 @@ import CTAButton from "../CTA";
 import { Cpu, Handshake, Linkedin, Mail } from "lucide-react";
 
 export default function About() {
-  const dateModifiedISO = "2025-11-24";
   const makeId = (prefix: string, name: string, idx: number) =>
     `${prefix}-${idx}-${String(name || "")
       .toLowerCase()
@@ -18,22 +17,6 @@ export default function About() {
       aria-labelledby="about-heading"
       className="py-24 p-6 lg:px-4 xl:px-0 max-w-7xl mx-auto relative overflow-hidden "
     >
-      {/* JSON-LD freshness + author (emit-able at SSR/prerender) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Keshav Sharma",
-            description:
-              "Keshav Sharma is a Frontend Engineer who helps local businesses modernize and optimize websites focusing on React, Next.js, performance, and structured data.",
-            dateModified: dateModifiedISO,
-            sameAs: ["https://www.linkedin.com/in/keshav-sharma-1482b7189/"],
-          }),
-        }}
-      />
-
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* LEFT — Bio card (glass + gradient accent) */}
@@ -66,11 +49,10 @@ export default function About() {
               id="about-desc"
               className="text-lg text-text-muted leading-relaxed mb-6 max-w-xl"
             >
-              I help businesses and service providers modernize and optimize
-              their websites for real customers — and for the new wave of
-              AI-driven search. I focus on fast wins: measurable performance
-              improvements, cleaner booking flows, and structured content that
-              makes your site easier for both people and AI to understand.
+              I help businesses modernize their websites for the AI era. I focus
+              on fast wins: measurable performance improvements, cleaner booking
+              flows, and structured content that makes your site easier for both
+              people and AI to understand.
             </p>
 
             {/* features as a semantic list for screen readers / AT */}
